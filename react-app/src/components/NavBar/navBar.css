@@ -1,0 +1,29 @@
+.site-header {
+  position: sticky;
+  top: 0;
+  left: 0;
+  width: 100%;
+}
+
+.navbar {
+  background-color: grey;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  width: 70%;
+  padding: 0 0.5rem;
+}
+
+.navbar__links {
+  list-style: none;
+  margin: 0;
+}
+
+.navbar__link {
+  display: inline;
+  padding: 0 0.5rem;
+  vertical-align: middle;
+}
