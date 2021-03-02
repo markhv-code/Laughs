@@ -14,7 +14,6 @@ class User(db.Model, UserMixin):
     imageURL = db.Column(db.String(2083), nullable=True)
     timestamp = db.Column(db.DateTime, index=True, default=datetime.utcnow)
 
-
     # messages_sent = db.relationship(
     #     "Message", foreign_keys="Message.senderId", back_populates="sender"
     # )
@@ -38,6 +37,6 @@ class User(db.Model, UserMixin):
             "id": self.id,
             "username": self.username,
             "email": self.email,
-            "city": self.city,
-            "stateAbbr": self.stateAbbr,
+            "imageURL": self.imageURL,
+            "timestamp": self.timestamp,
         }
