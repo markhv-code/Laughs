@@ -12,7 +12,8 @@ class User(db.Model, UserMixin):
     email = db.Column(db.String(255), nullable=False, unique=True)
     hashed_password = db.Column(db.String(255), nullable=False)
     imageURL = db.Column(db.String(2083), nullable=True)
-    join_date = db.Column(db.Datetime, index=True, default=datetime.now)
+    timestamp = db.Column(db.DateTime, index=True, default=datetime.utcnow)
+
 
     # messages_sent = db.relationship(
     #     "Message", foreign_keys="Message.senderId", back_populates="sender"
