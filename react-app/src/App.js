@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
-// import { BrowserRouter, Route, Switch } from 'react-router-dom';
-import { BrowserRouter, Switch } from 'react-router-dom';
+import { BrowserRouter, Route, Switch } from 'react-router-dom';
+// import { BrowserRouter, Switch } from 'react-router-dom';
 
 // components
 
@@ -8,6 +8,7 @@ import NavBar from './components/NavBar/index.js'
 import ProtectedRoute from './components/auth/ProtectedRoute';
 import UsersList from './components/Users/UsersList';
 import User from './components/Users/User';
+import SplashPage from './components/SplashPage/splashPage'
 
 import { useModalAndAuthContext } from './context/ModalAndAuth';
 
@@ -34,8 +35,11 @@ function App() {
 
   return (
     <BrowserRouter>
-      <NavBar />
       <Switch>
+        <Route path='/' exact={true}>
+          <SplashPage />
+        </Route>
+        <NavBar />
         <ProtectedRoute
           path='/users'
           exact={true}
@@ -50,7 +54,7 @@ function App() {
         >
           <User />
         </ProtectedRoute>
-        <ProtectedRoute path='/' exact={true} authenticated={authenticated}>
+        <ProtectedRoute path='/home' exact={true} authenticated={authenticated}>
           <h1>My Home Page</h1>
         </ProtectedRoute>
       </Switch>
