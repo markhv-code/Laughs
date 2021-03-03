@@ -19,7 +19,7 @@ const NavBar = () => {
     <header className='site-header'>
       <nav className='navbar'>
         <div>
-          <img className="logo" alt="pair yo' pet logo" src="/images/pyp-logo-cropped.png"></img>
+          <img className="logo" alt="Laughs App logo" src="/images/pyp-logo-cropped.png"></img>
         </div>
         <ul className='navbar__links'>
           <li className='navbar__link'>
