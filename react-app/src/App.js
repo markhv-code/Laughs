@@ -40,7 +40,7 @@ function App() {
         <Route path='/' exact={true}>
           <SplashPage />
         </Route>
-        <NavBar />
+        {/* <NavBar /> */}
         <ProtectedRoute
           path='/users'
           exact={true}
