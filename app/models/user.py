@@ -2,6 +2,7 @@ from .db import db
 from werkzeug.security import generate_password_hash, check_password_hash
 from flask_login import UserMixin
 from datetime import datetime
+from sqlalchemy.orm import relationship
 
 
 class User(db.Model, UserMixin):
@@ -14,6 +15,8 @@ class User(db.Model, UserMixin):
     imageURL = db.Column(db.String(2083), nullable=True)
     timestamp = db.Column(db.DateTime, index=True, default=datetime.utcnow)
 
+    jokes = relationship("Joke", backref="users")
+    threads = relationship("Thread", backref="users")
     # messages_sent = db.relationship(
     #     "Message", foreign_keys="Message.senderId", back_populates="sender"
     # )

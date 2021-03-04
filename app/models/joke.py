@@ -1,4 +1,5 @@
 from .db import db
+from datetime import datetime
 
 
 class Joke(db.Model):
@@ -10,3 +11,16 @@ class Joke(db.Model):
     imageURL = db.Column(db.String(2083), nullable=False)
     jokeType = db.Column(db.String(50), nullable=False)
     threadId = db.Column(db.Integer, db.ForeignKey("threads.id"), nullable=False)
+    timestamp = db.Column(db.DateTime, index=True, default=datetime.utcnow)
+
+
+def to_dict(self):
+    return {
+        "id": self.id,
+        "userId": self.userId,
+        "joke": self.joke,
+        "imageURL": self.imageURL,
+        "jokeType": self.jokeType,
+        "threadId": self.threadId,
+        "timestamp": self.timestamp,
+    }
