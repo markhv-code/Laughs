@@ -32,7 +32,7 @@ function LoginForm() {
   };
 
   if (authenticated) {
-    return <Redirect to='/' />;
+    return <Redirect to='/home' />;
   }
 
   return (
