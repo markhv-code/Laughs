@@ -9,6 +9,7 @@ import ProtectedRoute from './components/auth/ProtectedRoute';
 import UsersList from './components/Users/UsersList';
 import User from './components/Users/User';
 import SplashPage from './components/SplashPage/splashPage'
+import HomeFeed from "./components/HomeFeed/index"
 
 import { useModalAndAuthContext } from './context/ModalAndAuth';
 
@@ -55,7 +56,7 @@ function App() {
           <User />
         </ProtectedRoute>
         <ProtectedRoute path='/home' exact={true} authenticated={authenticated}>
-          <h1>My Home Page</h1>
+          <HomeFeed />
         </ProtectedRoute>
       </Switch>
     </BrowserRouter>
