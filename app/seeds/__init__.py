@@ -1,6 +1,7 @@
 from flask.cli import AppGroup
 from .users import seed_users, undo_users
-# from .pets import seed_pets, undo_pets
+from .threads import seed_threads, undo_threads
+from .jokes import seed_jokes, undo_jokes
 # from .messages import seed_messages, undo_messages
 # from .best_friends import seed_best_friends, undo_best_friends
 
@@ -13,7 +14,8 @@ seed_commands = AppGroup('seed')
 @seed_commands.command('all')
 def seed():
     seed_users()
-    # seed_pets()
+    seed_threads()
+    seed_jokes()
     # seed_messages()
     # seed_best_friends()
 
@@ -22,6 +24,6 @@ def seed():
 @seed_commands.command('undo')
 def undo():
     undo_users()
-    # undo_pets()
-    # undo_messages()
+    undo_threads()
+    undo_jokes()
     # undo_best_friends()
