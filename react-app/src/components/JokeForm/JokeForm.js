@@ -83,7 +83,21 @@ function JokeForm({ jokeToUpdate }) {
             <option value='Christmas'>Christmas</option>
           </select>
         </div>
+            <label>
+          Image
+          <input type='file' onChange={updateFile} />
+        </label>
+        <div>
+          <button type='submit'>Share Your Joke!</button>
+        </div>
+        <div>
+          {errors.map((error) => (
+            <div key={error}>{error}</div>
+          ))}
+        </div>
       </form>
       </>
   )
 }
+
+export default JokeForm;
