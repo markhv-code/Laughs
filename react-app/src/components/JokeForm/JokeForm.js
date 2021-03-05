@@ -4,6 +4,7 @@ import { createJoke } from "../../store/jokes";
 
 function JokeForm({ jokeToUpdate }) {
   const currentUser = useSelector((state) => state.session.user);
+  console.log("------------------CurrentUsr", currentUser);
   const dispatch = useDispatch();
 
   const [jokeWords, setJokeWords] = useState("");
@@ -50,9 +51,9 @@ function JokeForm({ jokeToUpdate }) {
 
   return (
     <>
-      <h1 className="text-4xl col-start-3 col-end-6 row-start-1 row-end-2 p-1 m-1 justify-self-center">
+      {/* <h1 className="text-4xl col-start-3 col-end-6 row-start-1 row-end-2 p-1 m-1 justify-self-center">
         {!!jokeToUpdate ? "Update Joke" : "Add Joke"}
-      </h1>
+      </h1> */}
       <form
         className="text-lg col-start-3 col-end-6 row-start-2 row-end-4 p-1 m-1"
         onSubmit={createJokePost}
@@ -94,8 +95,8 @@ function JokeForm({ jokeToUpdate }) {
             Image
             <input type="file" onChange={updateFile} />
             </label>
-            <div>
-            <button className="bg-green-500" type="submit">Share Your Joke!</button>
+            <div className="grid">
+            <button className="h-1/3 bg-green-joker rounded-lg justify-self-end self-center" type="submit">Share Your Joke!</button>
             </div>
         </div>
         <div>
