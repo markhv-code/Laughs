@@ -1,5 +1,6 @@
 from .db import db
 from datetime import datetime
+from sqlalchemy.orm import relationship
 
 
 class Joke(db.Model):
@@ -10,8 +11,10 @@ class Joke(db.Model):
     joke = db.Column(db.String(800), nullable=False)
     imageURL = db.Column(db.String(2083), nullable=True)
     jokeType = db.Column(db.String(50), nullable=False)
-    threadId = db.Column(db.Integer, db.ForeignKey("threads.id"), nullable=False)
     timestamp = db.Column(db.DateTime, index=True, default=datetime.utcnow)
+
+    threads = relationship("Thread", backref="jokes")
+
 
     def to_dict(self):
         return {
@@ -20,6 +23,5 @@ class Joke(db.Model):
             "joke": self.joke,
             "imageURL": self.imageURL,
             "jokeType": self.jokeType,
-            "threadId": self.threadId,
             "timestamp": self.timestamp,
         }

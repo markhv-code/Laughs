@@ -9,13 +9,11 @@ def seed_jokes():
             joke="I ate a clock yesterday, it was very time-consuming.",
             imageURL="https://assets-global.website-files.com/5dcc7f8c449e597ed83356b8/5dcc8a5e5473766654e080bb_5d93d0a059ce656959dab196_logo-full-black-2000-p-500.png",
             jokeType="Misc",
-            threadId=1,
         ),
         Joke(
             userId=2,
             joke="A perfectionist walked into a bar...apparently, the bar wasn’t set high enough.",
             jokeType="Any",
-            threadId=2,
         ),
     ]
 

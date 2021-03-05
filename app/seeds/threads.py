@@ -6,10 +6,12 @@ def seed_threads():
     threads = [
         Thread(
             userId=2,
+            jokeId=1,
             comment="Wow what a punny time joke!",
         ),
         Thread(
             userId=1,
+            jokeId=2,
             comment="ahhh the drawbacks of perfectionism",
         ),
     ]

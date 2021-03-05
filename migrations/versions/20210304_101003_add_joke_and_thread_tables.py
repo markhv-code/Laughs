@@ -33,9 +33,7 @@ def upgrade():
     sa.Column('joke', sa.String(length=800), nullable=False),
     sa.Column('imageURL', sa.String(length=2083), nullable=True),
     sa.Column('jokeType', sa.String(length=50), nullable=False),
-    sa.Column('threadId', sa.Integer(), nullable=False),
     sa.Column('timestamp', sa.DateTime(), nullable=True),
-    sa.ForeignKeyConstraint(['threadId'], ['threads.id'], ),
     sa.ForeignKeyConstraint(['userId'], ['users.id'], ),
     sa.PrimaryKeyConstraint('id')
     )

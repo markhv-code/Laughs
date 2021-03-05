@@ -55,7 +55,6 @@ def create_joke():
             joke=form.data["joke"],
             imageURL=output_link,
             jokeType=form.data["jokeType"],
-            threadId=form.data["threadId"],
         )
         db.session.add(new_joke)
         db.session.commit()
