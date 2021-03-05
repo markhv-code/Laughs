@@ -13,14 +13,13 @@ class Joke(db.Model):
     threadId = db.Column(db.Integer, db.ForeignKey("threads.id"), nullable=False)
     timestamp = db.Column(db.DateTime, index=True, default=datetime.utcnow)
 
-
-def to_dict(self):
-    return {
-        "id": self.id,
-        "userId": self.userId,
-        "joke": self.joke,
-        "imageURL": self.imageURL,
-        "jokeType": self.jokeType,
-        "threadId": self.threadId,
-        "timestamp": self.timestamp,
-    }
+    def to_dict(self):
+        return {
+            "id": self.id,
+            "userId": self.userId,
+            "joke": self.joke,
+            "imageURL": self.imageURL,
+            "jokeType": self.jokeType,
+            "threadId": self.threadId,
+            "timestamp": self.timestamp,
+        }

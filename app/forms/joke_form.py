@@ -23,6 +23,6 @@ class CreateJokeForm(FlaskForm):
     )
     imageURL = StringField(
         "imageURL",
-        validators=[Optional],
+        # validators=[Optional],
     )
     threadId = IntegerField("threadId", validators=[DataRequired()])

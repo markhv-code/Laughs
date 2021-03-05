@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { createJoke } from "../../store/jokes";
 
-function JokeForm({ jokeToUpdate }) {
+function JokeForm() { //took out joketoupdate
   const currentUser = useSelector((state) => state.session.user);
   console.log("------------------CurrentUsr", currentUser);
   const dispatch = useDispatch();
@@ -12,13 +12,13 @@ function JokeForm({ jokeToUpdate }) {
   const [image, setImage] = useState("");
   const [errors, setErrors] = useState([]);
 
-  useEffect(() => {
-    if (!!jokeToUpdate) {
-      setJokeWords(jokeToUpdate.joke);
-      setJokeType(jokeToUpdate.jokeType);
-      setImage(jokeToUpdate.image);
-    }
-  }, [jokeToUpdate]);
+//   useEffect(() => {
+//     if (!!jokeToUpdate) {
+//       setJokeWords(jokeToUpdate.joke);
+//       setJokeType(jokeToUpdate.jokeType);
+//       setImage(jokeToUpdate.image);
+//     }
+//   }, [jokeToUpdate]);
 
   const createJokePost = async (e) => {
     e.preventDefault();
@@ -32,17 +32,24 @@ function JokeForm({ jokeToUpdate }) {
       image,
     };
 
-    const jokeOrErrors = await dispatch(
-      !!jokeToUpdate
-        ? createJoke(joke, jokeToUpdate.id) // if you pass in a joke id, it updates instead
-        : createJoke(joke)
-    );
-    if (jokeOrErrors.errors) {
-      newErrors = jokeOrErrors.errors;
-      setErrors(newErrors);
-    } else {
-      // no refresh, but post should show up in top of feed.
+    const sendJoke = await dispatch(createJoke(joke))
+
+    if(sendJoke){
+        setJokeWords('');
+        setJokeType('');
+        setImage('')
     }
+    // const jokeOrErrors = await dispatch(
+    //   !!jokeToUpdate
+    //     ? createJoke(joke, jokeToUpdate.id) // if you pass in a joke id, it updates instead
+    //     : createJoke(joke)
+    // );
+    // if (jokeOrErrors.errors) {
+    //   newErrors = jokeOrErrors.errors;
+    //   setErrors(newErrors);
+    // } else {
+    //   // no refresh, but post should show up in top of feed.
+    // }
   };
   const updateFile = (e) => {
     const file = e.target.files[0];
