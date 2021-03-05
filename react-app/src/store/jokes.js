@@ -85,7 +85,7 @@ const jokeReducer = (state = initState, action) => {
     switch(action.type) {
         case LOAD_JOKES:
             for (let joke of action.jokes) {
-                newState[joke.id] = pet;
+                newState[joke.id] = joke;
             }
             return newState;
         case ADD_JOKE:

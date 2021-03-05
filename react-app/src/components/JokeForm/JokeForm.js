@@ -40,55 +40,63 @@ function JokeForm({ jokeToUpdate }) {
       newErrors = jokeOrErrors.errors;
       setErrors(newErrors);
     } else {
-        // no refresh, but post should show up in top of feed. 
+      // no refresh, but post should show up in top of feed.
     }
-}
-    const updateFile = (e) => {
-        const file = e.target.files[0];
-        if (file) setImage(file);
+  };
+  const updateFile = (e) => {
+    const file = e.target.files[0];
+    if (file) setImage(file);
   };
 
   return (
-      <>
-      <h1>{!!jokeToUpdate ? 'Update Joke' : 'Add Joke'}</h1>
-      <form onSubmit={createJokePost}>
-          <div>
-              <label>Joke</label>
-              <input
-            name='joke'
+    <>
+      <h1 className="text-4xl col-start-3 col-end-6 row-start-1 row-end-2 p-1 m-1 justify-self-center">
+        {!!jokeToUpdate ? "Update Joke" : "Add Joke"}
+      </h1>
+      <form
+        className="text-lg col-start-3 col-end-6 row-start-2 row-end-4 p-1 m-1"
+        onSubmit={createJokePost}
+      >
+        <div className="w-full h-24">
+          {/* <label className="self-center">Joke</label> */}
+          <input
+            className="w-full h-full rounded-lg border-4 border-light-blue-500 border-opacity-50"
+            name="joke"
             value={jokeWords}
             onChange={(e) => setJokeWords(e.target.value)}
+            placeholder="Tell a joke!"
             required
-            // className=''
           />
-          </div>
-          <div>
-          <label>Joke Type</label>
-          <select
-            name='jokeType'
-            value={jokeType}
-            onChange={(e) => setJokeType(e.target.value)}
-            required
-            // className='joke-form__input'
-          >
-            <option value='' disabled>
-              -Select One-
-            </option>
-            <option value='Any'>Any</option>
-            <option value='Misc'>Misc</option>
-            <option value='Programming'>Programming</option>
-            <option value='Dark'>Dark</option>
-            <option value='Pun'>Pun</option>
-            <option value='Spooky'>Spooky</option>
-            <option value='Christmas'>Christmas</option>
-          </select>
         </div>
+        <div className="grid grid-flow-col grid-cols-3 grid-rows-1 gap-1">
+            <div className="h-20">
+            <label>Joke Type</label>
+            <select
+                name="jokeType"
+                value={jokeType}
+                onChange={(e) => setJokeType(e.target.value)}
+                required
+                // className='joke-form__input'
+            >
+                <option value="" disabled>
+                -Select One-
+                </option>
+                <option value="Any">Any</option>
+                <option value="Misc">Misc</option>
+                <option value="Programming">Programming</option>
+                <option value="Dark">Dark</option>
+                <option value="Pun">Pun</option>
+                <option value="Spooky">Spooky</option>
+                <option value="Christmas">Christmas</option>
+            </select>
+            </div>
             <label>
-          Image
-          <input type='file' onChange={updateFile} />
-        </label>
-        <div>
-          <button type='submit'>Share Your Joke!</button>
+            Image
+            <input type="file" onChange={updateFile} />
+            </label>
+            <div>
+            <button type="submit">Share Your Joke!</button>
+            </div>
         </div>
         <div>
           {errors.map((error) => (
@@ -96,8 +104,8 @@ function JokeForm({ jokeToUpdate }) {
           ))}
         </div>
       </form>
-      </>
-  )
+    </>
+  );
 }
 
 export default JokeForm;
