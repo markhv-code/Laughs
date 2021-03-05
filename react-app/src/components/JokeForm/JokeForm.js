@@ -1,24 +1,27 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
+import { useHistory } from "react-router-dom";
 import { createJoke } from "../../store/jokes";
 
-function JokeForm() { //took out joketoupdate
+function JokeForm() {
+  //took out joketoupdate
   const currentUser = useSelector((state) => state.session.user);
   console.log("------------------CurrentUsr", currentUser);
   const dispatch = useDispatch();
+  const history = useHistory();
 
   const [jokeWords, setJokeWords] = useState("");
   const [jokeType, setJokeType] = useState("");
   const [image, setImage] = useState("");
   const [errors, setErrors] = useState([]);
 
-//   useEffect(() => {
-//     if (!!jokeToUpdate) {
-//       setJokeWords(jokeToUpdate.joke);
-//       setJokeType(jokeToUpdate.jokeType);
-//       setImage(jokeToUpdate.image);
-//     }
-//   }, [jokeToUpdate]);
+  //   useEffect(() => {
+  //     if (!!jokeToUpdate) {
+  //       setJokeWords(jokeToUpdate.joke);
+  //       setJokeType(jokeToUpdate.jokeType);
+  //       setImage(jokeToUpdate.image);
+  //     }
+  //   }, [jokeToUpdate]);
 
   const createJokePost = async (e) => {
     e.preventDefault();
@@ -32,12 +35,18 @@ function JokeForm() { //took out joketoupdate
       image,
     };
 
-    const sendJoke = await dispatch(createJoke(joke))
-
-    if(sendJoke){
-        setJokeWords('');
-        setJokeType('');
-        setImage('')
+    const sendJoke = await dispatch(createJoke(joke));
+    console.log('---------sendJoke-------', sendJoke);
+    if (sendJoke) {
+      setJokeWords("");
+      setJokeType("");
+      setImage("");
+    }
+    // if (sendJoke.errors) {
+    //   newErrors = sendJoke.errors;
+    //   setErrors(newErrors)};
+    else {
+      history.push(`/`);
     }
     // const jokeOrErrors = await dispatch(
     //   !!jokeToUpdate
@@ -77,34 +86,39 @@ function JokeForm() { //took out joketoupdate
           />
         </div>
         <div className="grid grid-flow-col grid-cols-3 grid-rows-1 gap-1">
-            <div className="h-20">
+          <div className="h-20">
             <label>Joke Type</label>
             <select
-                name="jokeType"
-                value={jokeType}
-                onChange={(e) => setJokeType(e.target.value)}
-                required
-                // className='joke-form__input'
+              name="jokeType"
+              value={jokeType}
+              onChange={(e) => setJokeType(e.target.value)}
+              required
+              // className='joke-form__input'
             >
-                <option value="" disabled>
+              <option value="" disabled>
                 -Select One-
-                </option>
-                <option value="Any">Any</option>
-                <option value="Misc">Misc</option>
-                <option value="Programming">Programming</option>
-                <option value="Dark">Dark</option>
-                <option value="Pun">Pun</option>
-                <option value="Spooky">Spooky</option>
-                <option value="Christmas">Christmas</option>
+              </option>
+              <option value="Any">Any</option>
+              <option value="Misc">Misc</option>
+              <option value="Programming">Programming</option>
+              <option value="Dark">Dark</option>
+              <option value="Pun">Pun</option>
+              <option value="Spooky">Spooky</option>
+              <option value="Christmas">Christmas</option>
             </select>
-            </div>
-            <label>
+          </div>
+          <label>
             Image
             <input type="file" onChange={updateFile} />
-            </label>
-            <div className="grid">
-            <button className="h-1/3 bg-green-joker rounded-lg justify-self-end self-center" type="submit">Share Your Joke!</button>
-            </div>
+          </label>
+          <div className="grid">
+            <button
+              className="h-1/3 bg-green-joker rounded-lg justify-self-end self-center"
+              type="submit"
+            >
+              Share Your Joke!
+            </button>
+          </div>
         </div>
         <div>
           {errors.map((error) => (

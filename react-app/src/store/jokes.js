@@ -31,7 +31,7 @@ export const getJokes = () => async (dispatch) => {
     };
 };
 
-export const createJoke = (newJoke, jokeIDtoUpdate = null) => async (dispatch) => {
+export const createJoke = (newJoke) => async (dispatch) => {
     const { userId, joke, imageURL, image, jokeType, threadId } = newJoke;
     
     const formData = new FormData();
@@ -43,29 +43,38 @@ export const createJoke = (newJoke, jokeIDtoUpdate = null) => async (dispatch) =
 
     if (image) formData.append('image', image);
     
-    const res = await fetch('/api/jokes');
-    const json = await res.json();
-    if (res.ok) {
-        dispatch(load(json.jokes))
-    };
+      // for creating pet
+    const res = await fetch(`/api/jokes`, {
+      method: 'POST',
+      body: formData,
+    });
+    const addedJoke = await res.json();
 
-     if (jokeIDtoUpdate) {
-        // for updating joke
-        const res = await fetch(`/api/jokes/${jokeIDtoUpdate}`, {
-        method: 'PUT',
-        body: formData,
-        });
-
-        const updatedJoke = await res.json();
-
-        if (res.ok) {
-        dispatch(addJoke(updatedJoke));
-        return updatedJoke;
-        } else {
-        const errors = updatedJoke;
-        return errors;
-        }
+    if (!addedJoke.errors) {
+      dispatch(addJoke(addedJoke));
+      return addedJoke;
+    } else {
+      const errors = addedJoke;
+      return errors;
     }
+
+    //  if (jokeIDtoUpdate) {
+    //     // for updating joke
+    //     const res = await fetch(`/api/jokes/${jokeIDtoUpdate}`, {
+    //     method: 'PUT',
+    //     body: formData,
+    //     });
+
+    //     const updatedJoke = await res.json();
+
+    //     if (res.ok) {
+    //     dispatch(addJoke(updatedJoke));
+    //     return updatedJoke;
+    //     } else {
+    //     const errors = updatedJoke;
+    //     return errors;
+    //     }
+    // }
 };
 
 export const deleteJoke = (jokeId) => async (dispatch) => {
