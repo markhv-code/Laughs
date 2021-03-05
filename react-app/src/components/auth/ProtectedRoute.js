@@ -1,13 +1,19 @@
-import React from 'react';
-import { Route, Redirect } from 'react-router-dom';
+import React from "react";
+import { Route, Redirect } from "react-router-dom";
+import NavBar from "../NavBar/index";
 
-const ProtectedRoute = props => {
+const ProtectedRoute = (props) => {
   return (
     <Route {...props}>
-      {(props.authenticated)? props.children  : <Redirect to="/login" />}
+      {props.authenticated ? (
+        <>
+          <NavBar /> {props.children}
+        </>
+      ) : (
+        <Redirect to="/login" />
+      )}
     </Route>
-  )
+  );
 };
-
 
 export default ProtectedRoute;
