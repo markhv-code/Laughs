@@ -95,7 +95,7 @@ function JokeForm({ jokeToUpdate }) {
             <input type="file" onChange={updateFile} />
             </label>
             <div>
-            <button type="submit">Share Your Joke!</button>
+            <button className="bg-green-500" type="submit">Share Your Joke!</button>
             </div>
         </div>
         <div>
