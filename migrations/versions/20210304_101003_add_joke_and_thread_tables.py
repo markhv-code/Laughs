@@ -21,6 +21,7 @@ def upgrade():
     op.create_table('threads',
     sa.Column('id', sa.Integer(), nullable=False),
     sa.Column('userId', sa.Integer(), nullable=False),
+    sa.Column('jokeId', sa.Integer(), nullable=False),
     sa.Column('comment', sa.String(length=500), nullable=False),
     sa.Column('timestamp', sa.DateTime(), nullable=True),
     sa.ForeignKeyConstraint(['userId'], ['users.id'], ),
