@@ -14,7 +14,7 @@ class Joke(db.Model):
     timestamp = db.Column(db.DateTime, index=True, default=datetime.utcnow)
 
     threads = relationship("Thread", backref="jokes")
-
+    users = relationship("User", backref="jokes")
 
     def to_dict(self):
         return {
@@ -24,4 +24,5 @@ class Joke(db.Model):
             "imageURL": self.imageURL,
             "jokeType": self.jokeType,
             "timestamp": self.timestamp,
+            "users": self.users.to_dict(),
         }

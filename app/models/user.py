@@ -15,7 +15,7 @@ class User(db.Model, UserMixin):
     imageURL = db.Column(db.String(2083), nullable=True)
     timestamp = db.Column(db.DateTime, index=True, default=datetime.utcnow)
 
-    jokes = relationship("Joke", backref="users")
+    # jokes = relationship("Joke", backref="users")
     threads = relationship("Thread", backref="users")
     # messages_sent = db.relationship(
     #     "Message", foreign_keys="Message.senderId", back_populates="sender"
