@@ -1,6 +1,6 @@
 
-default export function ThreadForm(){
+export default function ThreadForm(){
     return (
-        
+        <div>Thread</div>
     )
 }

@@ -1,5 +1,6 @@
 import { useDispatch, useSelector } from 'react-redux';
 import { getJokes } from '../../store/jokes';
+import ThreadForm from '../ThreadForm';
 
 export default function JokeFeed() {
     const dispatch = useDispatch();
@@ -18,6 +19,7 @@ export default function JokeFeed() {
                             <h3>Joke Type: {post.jokeType}</h3>
                             <h3>{myDate.toLocaleString()}</h3>
                             <h3 className="text-lg">{joke}</h3>
+                            <ThreadForm />
                     </div>
                 )
             })}
