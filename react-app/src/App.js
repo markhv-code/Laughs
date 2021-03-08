@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
-
+import { useDispatch } from 'react-redux';
 // components
 
 // import NavBar from './components/NavBar/index.js'
@@ -11,15 +11,16 @@ import SplashPage from './components/SplashPage/splashPage'
 import HomeFeed from "./components/HomeFeed/index"
 
 import { useModalAndAuthContext } from './context/ModalAndAuth';
-
+import { getJokes } from './store/jokes';
 import { authenticate } from './services/auth';
 
 function App() {
   const { authenticated, setAuthenticated } = useModalAndAuthContext();
-
+  const dispatch = useDispatch();
   const [loaded, setLoaded] = useState(false);
 
   useEffect(() => {
+    dispatch(getJokes());
     (async () => {
       const user = await authenticate();
       if (!user.errors) {
@@ -30,7 +31,7 @@ function App() {
   }, [setAuthenticated]);
 
   if (!loaded) {
-    return null;
+    return 'loading...';
   }
 
   return (
