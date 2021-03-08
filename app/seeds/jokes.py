@@ -15,6 +15,106 @@ def seed_jokes():
             joke="A perfectionist walked into a bar...apparently, the bar wasn’t set high enough.",
             jokeType="Any",
         ),
+        Joke(
+            userId=2,
+            joke="A perfectionist walked into a bar...apparently, the bar wasn’t set high enough.",
+            jokeType="Any",
+        ),
+        Joke(
+            userId=2,
+            joke="A perfectionist walked into a bar...apparently, the bar wasn’t set high enough.",
+            jokeType="Any",
+        ),
+        Joke(
+            userId=2,
+            joke="A perfectionist walked into a bar...apparently, the bar wasn’t set high enough.",
+            jokeType="Any",
+        ),
+        Joke(
+            userId=2,
+            joke="A perfectionist walked into a bar...apparently, the bar wasn’t set high enough.",
+            jokeType="Any",
+        ),
+        Joke(
+            userId=2,
+            joke="A perfectionist walked into a bar...apparently, the bar wasn’t set high enough.",
+            jokeType="Any",
+        ),
+        Joke(
+            userId=2,
+            joke="A perfectionist walked into a bar...apparently, the bar wasn’t set high enough.",
+            jokeType="Any",
+        ),
+        Joke(
+            userId=2,
+            joke="A perfectionist walked into a bar...apparently, the bar wasn’t set high enough.",
+            jokeType="Any",
+        ),
+        Joke(
+            userId=2,
+            joke="A perfectionist walked into a bar...apparently, the bar wasn’t set high enough.",
+            jokeType="Any",
+        ),
+        Joke(
+            userId=2,
+            joke="A perfectionist walked into a bar...apparently, the bar wasn’t set high enough.",
+            jokeType="Any",
+        ),
+        Joke(
+            userId=2,
+            joke="A perfectionist walked into a bar...apparently, the bar wasn’t set high enough.",
+            jokeType="Any",
+        ),
+        Joke(
+            userId=2,
+            joke="A perfectionist walked into a bar...apparently, the bar wasn’t set high enough.",
+            jokeType="Any",
+        ),
+        Joke(
+            userId=2,
+            joke="A perfectionist walked into a bar...apparently, the bar wasn’t set high enough.",
+            jokeType="Any",
+        ),
+        Joke(
+            userId=2,
+            joke="A perfectionist walked into a bar...apparently, the bar wasn’t set high enough.",
+            jokeType="Any",
+        ),
+        Joke(
+            userId=2,
+            joke="A perfectionist walked into a bar...apparently, the bar wasn’t set high enough.",
+            jokeType="Any",
+        ),
+        Joke(
+            userId=2,
+            joke="A perfectionist walked into a bar...apparently, the bar wasn’t set high enough.",
+            jokeType="Any",
+        ),
+        Joke(
+            userId=2,
+            joke="A perfectionist walked into a bar...apparently, the bar wasn’t set high enough.",
+            jokeType="Any",
+        ),
+        Joke(
+            userId=2,
+            joke="A perfectionist walked into a bar...apparently, the bar wasn’t set high enough.",
+            jokeType="Any",
+        ),
+        Joke(
+            userId=2,
+            joke="A perfectionist walked into a bar...apparently, the bar wasn’t set high enough.",
+            jokeType="Any",
+        ),
+        Joke(
+            userId=2,
+            joke="A perfectionist walked into a bar...apparently, the bar wasn’t set high enough.",
+            jokeType="Any",
+        ),
+        Joke(
+            userId=2,
+            joke="A perfectionist walked into a bar...apparently, the bar wasn’t set high enough.",
+            jokeType="Any",
+        ),
     ]
 
     db.session.bulk_save_objects(jokes)

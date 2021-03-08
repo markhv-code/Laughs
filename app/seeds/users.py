@@ -17,6 +17,41 @@ def seed_users():
             email="demo2@aa.io",
             password="password",
         ),
+        User(
+            username="Mark",
+            email="mark2@aa.io",
+            password="password",
+        ),
+        User(
+            username="Ellie",
+            email="ellie@aa.io",
+            password="password",
+        ),
+        User(
+            username="Bowen",
+            email="bowen@aa.io",
+            password="password",
+        ),
+        User(
+            username="Kirk",
+            email="kirk@aa.io",
+            password="password",
+        ),
+        User(
+            username="Teresa",
+            email="teresa@aa.io",
+            password="password",
+        ),
+        User(
+            username="Gus",
+            email="gus@aa.io",
+            password="password",
+        ),
+        User(
+            username="Emily",
+            email="emily@aa.io",
+            password="password",
+        ),
     ]
 
     db.session.bulk_save_objects(users)
