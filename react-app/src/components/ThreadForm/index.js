@@ -5,6 +5,7 @@ import { useDispatch, useSelector } from "react-redux";
 export default function ThreadForm(){
     const currentUser = useSelector((state) => state.session.user);
     const dispatch = useDispatch();
+    const currentJoke = useSelector((state) => state.jokes)
 
     const [comment, setComment] = useState('');
     const [errors, setErrors] = useState([]);
@@ -15,7 +16,7 @@ export default function ThreadForm(){
         
         const thread = {
             userId: currentUser.id,
-            jokeId: ,
+            // jokeId: ,
             comment: comment,
         };
 
