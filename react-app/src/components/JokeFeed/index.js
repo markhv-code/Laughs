@@ -12,7 +12,7 @@ export default function JokeFeed() {
                 const { id, imageURL, joke } = post;
                 return (
                     <div key={id}>
-                        <img src={imageURL} alt=''/>
+                        {/* <img src={imageURL} alt=''/> */}
                         <div>
                             <h3>{joke}</h3>
                         </div>
