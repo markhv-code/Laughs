@@ -1,4 +1,5 @@
 import JokeForm from '../JokeForm/JokeForm'
+import JokeFeed from '../JokeFeed/index'
 
 export default function HomeFeed(){
     return (
@@ -8,7 +9,7 @@ export default function HomeFeed(){
                 <JokeForm />
             </div>
             <div>
-                <h1>Hello World</h1>
+                <JokeFeed />
             </div>
         </>
     )
