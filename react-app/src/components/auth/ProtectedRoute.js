@@ -10,7 +10,7 @@ const ProtectedRoute = (props) => {
           <NavBar /> {props.children}
         </>
       ) : (
-        <Redirect to="/login" />
+        <Redirect to="/" />
       )}
     </Route>
   );
