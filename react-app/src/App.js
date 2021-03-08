@@ -28,7 +28,7 @@ function App() {
       }
       setLoaded(true);
     })();
-  }, [setAuthenticated]);
+  }, [setAuthenticated, dispatch]);
 
   if (!loaded) {
     return 'loading...';
