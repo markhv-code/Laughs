@@ -14,6 +14,7 @@ export default function JokeFeed() {
                     <div key={id}>
                         {/* <img src={imageURL} alt=''/> */}
                         <div>
+                            <h3>{post.users.username}</h3>
                             <h3>{joke}</h3>
                         </div>
                     </div>
