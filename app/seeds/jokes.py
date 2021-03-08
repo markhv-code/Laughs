@@ -56,7 +56,7 @@ def seed_jokes():
             jokeType="Any",
         ),
         Joke(
-            userId=10,
+            userId=1,
             joke="A perfectionist walked into a bar...apparently, the bar wasn’t set high enough.",
             jokeType="Any",
         ),
