@@ -7,6 +7,9 @@ export default function HomeFeed(){
             <div className="grid grid-flow-col grid-cols-7 grid-rows-6 gap-3">
                 <JokeForm />
             </div>
+            <div>
+                <h1>Hello World</h1>
+            </div>
         </>
     )
 }
