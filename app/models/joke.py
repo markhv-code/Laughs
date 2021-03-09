@@ -25,4 +25,5 @@ class Joke(db.Model):
             "jokeType": self.jokeType,
             "timestamp": self.timestamp,
             "users": self.users.to_dict(),
+            "threads": self.threads.to_dict(),
         }

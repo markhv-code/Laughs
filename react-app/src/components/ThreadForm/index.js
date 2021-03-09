@@ -5,7 +5,8 @@ import { createThread } from "../../store/threads";
 export default function ThreadForm({ id }) {
   const currentUser = useSelector((state) => state.session.user);
   const dispatch = useDispatch();
-  const currentJoke = useSelector((state) => state.jokes);
+//   const currentJoke = useSelector((state) => state.jokes);
+//   console.log("------------id---------", id);
 
   const [comment, setComment] = useState("");
   const [errors, setErrors] = useState([]);
@@ -36,7 +37,7 @@ export default function ThreadForm({ id }) {
           className="w-5/6 rounded-lg border-4"
           name="comment"
           value={comment}
-          onChange={(e) => setComment(e.target.balue)}
+          onChange={(e) => setComment(e.target.value)}
           placeholder="Leave a comment!"
           required
         />

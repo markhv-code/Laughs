@@ -1,4 +1,5 @@
 from flask import Blueprint, request
+from flask_login import login_required
 
 from app.models import Thread, db
 from app.forms import CreateThreadForm
@@ -16,7 +17,7 @@ def get_threads():
     return {"threads": [thread.to_dict() for thread in threads]}
 
 
-@joke_routes.route("", methods=["POST"])
+@thread_routes.route("", methods=["POST"])
 @login_required
 def create_joke():
     """
@@ -33,6 +34,7 @@ def create_joke():
         )
         db.session.add(new_thread)
         db.session.commit()
+        print("----------newthread----", new_thread)
         return new_thread.to_dict()
 
     errors = validation_errors_to_error_messages(form.errors)
