@@ -8,6 +8,9 @@ class CreateThreadForm(FlaskForm):
     userId = IntegerField("userId", validators=[
         DataRequired(message="Must associate with a user")]
     )
+    jokeId = IntegerField("jokeId", validators=[
+        DataRequired(message="Must associate with a joke")]
+    )
     comment = StringField(
         'comment', validators=[
             DataRequired(message="A comment is required"),
