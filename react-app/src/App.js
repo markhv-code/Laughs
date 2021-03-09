@@ -12,6 +12,7 @@ import HomeFeed from "./components/HomeFeed/index"
 
 import { useModalAndAuthContext } from './context/ModalAndAuth';
 import { getJokes } from './store/jokes';
+import { getThreads } from './store/threads';
 import { authenticate } from './services/auth';
 
 function App() {
@@ -21,6 +22,7 @@ function App() {
 
   useEffect(() => {
     dispatch(getJokes());
+    dispatch(getThreads());
     (async () => {
       const user = await authenticate();
       if (!user.errors) {
