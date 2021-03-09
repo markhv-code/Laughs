@@ -1,4 +1,4 @@
-from flask import Blueprint
+from flask import Blueprint, request
 
 from app.models import Thread, db
 from app.forms import CreateThreadForm
@@ -34,3 +34,46 @@ def create_joke():
         db.session.add(new_thread)
         db.session.commit()
         return new_thread.to_dict()
+
+    errors = validation_errors_to_error_messages(form.errors)
+
+    return {"errors": errors}
+
+
+@thread_routes.route("/<threadId>", methods=["PUT"])
+@login_required
+def update_thread(threadId):
+    """
+    Update thread
+    """
+    form = CreateThreadForm()
+    form["csrf_token"].data = request.cookies["csrf_token"]
+
+    thread_to_update = Thread.query.get(threadId)
+
+    thread_to_update.comment = form.data["comment"]
+
+    if form.validate_on_submit():
+        db.session.add(thread_to_update)
+        db.session.commit()
+        return thread_to_update.to_dict()
+
+    errors = validation_errors_to_error_messages(form.errors)
+
+    return {"errors": errors}
+
+
+@thread_routes.route("/<threadId>", methods=["DELETE"])
+@login_required
+def delete_thread(threadId):
+    """
+    Delete thread
+    """
+    thread_to_delete = Thread.query.get(threadId)
+    if thread_to_delete:
+        db.session.delete(thread_to_delete)
+        db.session.commit()
+        return "Deleted"
+    else:
+        print(f"-------- no thread found with id {threadId} -------- ")
+        return {"errors": "No thread found with given id"}
