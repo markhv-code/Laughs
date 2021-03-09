@@ -3,11 +3,13 @@ import thunk from 'redux-thunk'
 import sessionReducer from './session'
 import userReducer from './users';
 import jokeReducer from './jokes';
+import threadReducer from './threads';
 
 const rootReducer = combineReducers({
     session: sessionReducer,
     users: userReducer,
     jokes: jokeReducer,
+    threads: threadReducer,
 })
 
 let enhancer;

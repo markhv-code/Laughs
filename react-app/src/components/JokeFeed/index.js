@@ -12,7 +12,7 @@ export default function JokeFeed() {
             {allJokes.map((post) => {
                 const { id, imageURL, joke, jokeType } = post;
                 const myDate = new Date(post.users.timestamp);
-                const jokeComments = Thread.query
+                // const jokeComments = Thread.query(id === jokeId).all;
                 return (
                     <div key={id} className="rounded-lg border-4 border-light-blue-500 border-opacity-50 p-1 m-2">
                             <h3>{post.users.username}</h3>

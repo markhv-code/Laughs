@@ -1,9 +1,23 @@
 const ADD_THREAD = '/jokes/ADD_THREAD';
+const LOAD_THEADS = '/threads/LOAD_THREADS';
 
 const addThread = thread => ({
     type: ADD_THREAD,
     thread,
+});
+
+const load = (threads) => ({
+  type: LOAD_THEADS,
+  threads,
 })
+
+const getThreads = () => async (dispatch) => {
+  const res = await fetch('/api/threads');
+  const json = await res.json();
+  if (res.ok){
+    dispatch(load(json.threads));
+  }
+};
 
 export const createThread = (newThread) => async (dispatch) => {
     const { userId, jokeId, comment } = newThread;
@@ -35,6 +49,11 @@ const threadReducer = (state = initState, action) => {
     switch(action.type){
         case ADD_THREAD:
             newState[action.thread.id] = action.thread;
+            return newState;
+        case LOAD_THEADS:
+            for( let thread of action.theads){
+              newState[thread.id] = thread;
+            }
             return newState;
         default:
             return newState;
