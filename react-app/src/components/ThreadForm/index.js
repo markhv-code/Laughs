@@ -21,6 +21,7 @@ export default function ThreadForm({ id }) {
     };
 
     const sendThread = await dispatch(createThread(thread));
+    console.log('---------sendThread-------', sendThread);
     if (sendThread) {
       setComment("");
     } else {
@@ -30,16 +31,16 @@ export default function ThreadForm({ id }) {
 
   return (
     <>
-      <form>
+      <form onSubmit={createThreadPost}>
         <input
-          className="w-full rounded-lg border-4"
+          className="w-5/6 rounded-lg border-4"
           name="comment"
           value={comment}
           onChange={(e) => setComment(e.target.balue)}
           placeholder="Leave a comment!"
           required
         />
-        <button type="submit">Post</button>
+        <button type="submit" className="m-2 w-1/12 rounded-lg bg-green-joker">Post</button>
       </form>
     </>
   );
