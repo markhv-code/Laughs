@@ -10,7 +10,7 @@ export default function JokeFeed() {
     console.log("----------jokeComments-------", jokeComments);
 
     return (
-        <div className="col-start-3 col-end-6 row-start-5 row-end-7 w-full h-full">
+        <div className="col-start-3 col-end-6 row-start-5 row-end-7 w-full h-full" >
             {allJokes.map((post) => {
                 const { id, imageURL, joke, jokeType } = post;
                 const myDate = new Date(post.users.timestamp);
@@ -21,7 +21,9 @@ export default function JokeFeed() {
                             <h3>Joke Type: {jokeType}</h3>
                             <h3>{myDate.toLocaleString()}</h3>
                             <h3 className="text-lg">{joke}</h3>
-                            {filteredComments && filteredComments.map(comment => (<div>comment.comment<div/>))}
+                            {filteredComments && (filteredComments.map(comment => {
+                                return(
+                                    <div>{comment.comment}<div/>)}))}
                             <ThreadForm id={id} />
                     </div>
                 )
