@@ -21,9 +21,11 @@ export default function JokeFeed() {
                             <h3>Joke Type: {jokeType}</h3>
                             <h3>{myDate.toLocaleString()}</h3>
                             <h3 className="text-lg">{joke}</h3>
-                            {filteredComments && (filteredComments.map(comment => {
-                                return(
-                                    <div>{comment.comment}<div/>)}))}
+                            {filteredComments && filteredComments.map(comment => (
+                                <div>
+                                    {comment.comment}
+                                </div>
+                            ))}
                             <ThreadForm id={id} />
                     </div>
                 )
