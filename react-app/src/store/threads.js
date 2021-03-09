@@ -11,7 +11,7 @@ const load = (threads) => ({
   threads,
 })
 
-const getThreads = () => async (dispatch) => {
+export const getThreads = () => async (dispatch) => {
   const res = await fetch('/api/threads');
   const json = await res.json();
   if (res.ok){
@@ -51,7 +51,7 @@ const threadReducer = (state = initState, action) => {
             newState[action.thread.id] = action.thread;
             return newState;
         case LOAD_THEADS:
-            for( let thread of action.theads){
+            for( let thread of action.threads){
               newState[thread.id] = thread;
             }
             return newState;
