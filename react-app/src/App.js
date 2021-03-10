@@ -8,7 +8,9 @@ import ProtectedRoute from './components/auth/ProtectedRoute';
 import UsersList from './components/Users/UsersList';
 import User from './components/Users/User';
 import SplashPage from './components/SplashPage/splashPage'
-import HomeFeed from "./components/HomeFeed/index"
+import HomeFeed from "./components/HomeFeed/index";
+import Messages from './components/Messages';
+
 
 import { useModalAndAuthContext } from './context/ModalAndAuth';
 import { getJokes } from './store/jokes';
