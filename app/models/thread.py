@@ -11,12 +11,11 @@ class Thread(db.Model):
     comment = db.Column(db.String(500), nullable=False)
     timestamp = db.Column(db.DateTime, index=True, default=datetime.utcnow)
 
-
-def to_dict(self):
-    return {
-        "id": self.id,
-        "userId": self.userId,
-        "jokeId": self.jokeId,
-        "comment": self.comment,
-        "timestamp": self.timestamp,
-    }
+    def to_dict(self):
+        return {
+            "id": self.id,
+            "userId": self.userId,
+            "jokeId": self.jokeId,
+            "comment": self.comment,
+            "timestamp": self.timestamp,
+        }
