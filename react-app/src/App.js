@@ -60,6 +60,13 @@ function App() {
         <ProtectedRoute path='/home' exact={true} authenticated={authenticated}>
           <HomeFeed />
         </ProtectedRoute>
+        <ProtectedRoute
+          path='/messages'
+          exact={true}
+          authenticated={!!sessionUser}
+          >
+          <Messages />
+        </ProtectedRoute>
       </Switch>
     </BrowserRouter>
   );
