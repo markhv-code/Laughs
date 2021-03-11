@@ -17,6 +17,7 @@ export const useOtherUserContext = () => useContext(OtherUserContext);
 export default function Messages() {
   // grab states from store
   const lgdInUser = useSelector((state) => state.session.user);
+  console.log(lgdInUser, "-------------user-----");
   const allMsgs = useSelector((state) => state.messages);
   const allUsers = useSelector((state) => state.users);
 
