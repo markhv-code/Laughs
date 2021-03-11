@@ -54,17 +54,17 @@ def seed_users():
         ),
         User(
             username="Malcom",
-            email="emily@aa.io",
+            email="malcom@aa.io",
             password="password",
         ),
         User(
             username="Jeff",
-            email="emily@aa.io",
+            email="jeff@aa.io",
             password="password",
         ),
         User(
             username="Aniya",
-            email="emily@aa.io",
+            email="aniya@aa.io",
             password="password",
         ),
     ]

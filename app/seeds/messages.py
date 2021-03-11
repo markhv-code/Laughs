@@ -14,7 +14,7 @@ def seed_messages():
     user7 = User.query.filter_by(username="Teresa").first()
     user8 = User.query.filter_by(username="Gus").first()
     user9 = User.query.filter_by(username="Emily").first()
-    user10 = User.query.filter_by(username="Malcolm").first()
+    user10 = User.query.filter_by(username="Malcom").first()
     user11 = User.query.filter_by(username="Jeff").first()
     user12 = User.query.filter_by(username="Aniya").first()
 
