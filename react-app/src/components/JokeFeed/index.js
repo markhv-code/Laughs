@@ -16,7 +16,7 @@ export default function JokeFeed() {
                 const { id, imageURL, joke, jokeType } = post;
                 const myDate = new Date(post.users.timestamp);
                 const filteredComments = jokeComments.filter(joke => (joke.jokeId === id));
-                console.log("-----------filtered-----", filteredComments);
+                // console.log("-----------filtered-----", filteredComments);
                 return (
                     <div key={id} className="rounded-lg border-4 border-light-blue-500 border-opacity-50 p-1 m-2">
                             <h3>{post.users.username}</h3>
@@ -24,7 +24,7 @@ export default function JokeFeed() {
                             <h3>{myDate.toLocaleString()}</h3>
                             <h3 className="text-lg">{joke}</h3>
                             {filteredComments && filteredComments.map(comment => (
-                                <div className="text-sm text-center">
+                                <div key={comment.id} className="text-sm text-center">
                                     {comment.comment}
                                 </div>
                             ))}
