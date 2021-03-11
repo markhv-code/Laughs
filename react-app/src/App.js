@@ -65,7 +65,7 @@ function App() {
         <ProtectedRoute
           path='/messages'
           exact={true}
-          authenticated={!!sessionUser}
+          authenticated={authenticated}
           >
           <Messages />
         </ProtectedRoute>
