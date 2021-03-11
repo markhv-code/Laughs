@@ -12,7 +12,7 @@ import HomeFeed from "./components/HomeFeed/index";
 import Messages from './components/Messages';
 
 
-// import { useModalAndAuthContext } from './context/ModalAndAuth';
+import { useModalAndAuthContext } from './context/ModalAndAuth';
 import { getJokes } from './store/jokes';
 import { getThreads } from './store/threads';
 import { getMessages } from './store/messages';
@@ -21,7 +21,7 @@ import { getUsers } from './store/users';
 import { authenticate } from './services/auth';
 
 function App() {
-  // const { authenticated, setAuthenticated } = useModalAndAuthContext();
+  const { authenticated, setAuthenticated } = useModalAndAuthContext();
   const dispatch = useDispatch();
   const [loaded, setLoaded] = useState(false);
   const sessionUser = useSelector((state) => state.session.user);
@@ -36,7 +36,7 @@ function App() {
     (async () => {
       const user = await authenticate();
       if (!user.errors) {
-        // setAuthenticated(true);
+        setAuthenticated(true);
         dispatch(setUser(user));
 
       }
