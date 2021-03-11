@@ -11,7 +11,7 @@ export default function MessageUsersHolder({
   const set = new Set();
   const cnvUserIdArr = [];
 
-  for (let i = allMsgsLgdInUser.length - 1; i > 0; i--) {
+  for (let i = allMsgsLgdInUser.length - 1; i >= 0; i--) {
     let msg = allMsgsLgdInUser[i];
     const idToAdd =
       msg.senderId === lgdInUser.id ? msg.receiverId : msg.senderId;
