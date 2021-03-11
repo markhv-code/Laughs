@@ -30,6 +30,11 @@ const NavBar = () => {
           {authenticated && (
             <>
               <li className='navbar__link'>
+                <NavLink to='/messages' exact={true} activeClassName='active'>
+                  Messages
+                </NavLink>
+              </li>
+              <li className='navbar__link'>
                 <NavLink to='/users' exact={true} activeClassName='active'>
                   Users
                 </NavLink>

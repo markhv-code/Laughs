@@ -4,12 +4,15 @@ import sessionReducer from './session'
 import userReducer from './users';
 import jokeReducer from './jokes';
 import threadReducer from './threads';
+import messageReducer from './messages';
+
 
 const rootReducer = combineReducers({
     session: sessionReducer,
     users: userReducer,
     jokes: jokeReducer,
     threads: threadReducer,
+    messages: messageReducer,
 })
 
 let enhancer;

@@ -17,12 +17,12 @@ class User(db.Model, UserMixin):
 
     # jokes = relationship("Joke", backref="users")
     threads = relationship("Thread", backref="users")
-    # messages_sent = db.relationship(
-    #     "Message", foreign_keys="Message.senderId", back_populates="sender"
-    # )
-    # messages_received = db.relationship(
-    #     "Message",foreign_keys="Message.receiverId",back_populates="receiver"
-    # )
+    messages_sent = db.relationship(
+        "Message", foreign_keys="Message.senderId", back_populates="sender"
+    )
+    messages_received = db.relationship(
+        "Message", foreign_keys="Message.receiverId", back_populates="receiver"
+    )
 
     @property
     def password(self):

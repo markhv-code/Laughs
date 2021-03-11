@@ -13,7 +13,7 @@ def seed_users():
             imageURL="https://assets-global.website-files.com/5dcc7f8c449e597ed83356b8/5dcc8a5e5473766654e080bb_5d93d0a059ce656959dab196_logo-full-black-2000-p-500.png"
         ),
         User(
-            username="Demo2",
+            username="Billy",
             email="demo2@aa.io",
             password="password",
         ),
@@ -50,6 +50,21 @@ def seed_users():
         User(
             username="Emily",
             email="emily@aa.io",
+            password="password",
+        ),
+        User(
+            username="Malcom",
+            email="malcom@aa.io",
+            password="password",
+        ),
+        User(
+            username="Jeff",
+            email="jeff@aa.io",
+            password="password",
+        ),
+        User(
+            username="Aniya",
+            email="aniya@aa.io",
             password="password",
         ),
     ]
