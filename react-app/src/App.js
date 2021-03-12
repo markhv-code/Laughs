@@ -42,7 +42,7 @@ function App() {
       }
       setLoaded(true);
     })();
-  }, [dispatch]);
+  }, [dispatch, setAuthenticated]);
 
   if (!loaded) {
     return 'loading...';

@@ -16,8 +16,8 @@ function LoginForm() {
     e.preventDefault();
     const user = await login(email, password);
     if (!user.errors) {
-      setAuthenticated(true);
       dispatch(setUser(user))
+      setAuthenticated(true);
     } else {
       setErrors(user.errors);
     }
