@@ -41,8 +41,7 @@ export default function MessageTextsHolder({ lgdInUser, allMsgsWOtherUser }) {
         <div>
           <h1 className='messages__title'>No conversation selected</h1>
           <p style={{ textAlign: 'center' }}>
-            Click a username on the left, or browse pets to find owners to
-            message.
+            Click a username on the left, or browse jokes to message other users.
           </p>
         </div>
       </div>
