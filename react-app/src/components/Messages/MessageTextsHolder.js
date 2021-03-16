@@ -37,9 +37,9 @@ export default function MessageTextsHolder({ lgdInUser, allMsgsWOtherUser }) {
 
   if (!otherUser.id) {
     return (
-      <div className='messages__container messages__texts-holder'>
+      <div className='flex flex-col from-gray-400 shadow-lg rounded-xl m-1 p-4 w-full justify-between'>
         <div>
-          <h1 className='messages__title'>No conversation selected</h1>
+          <h1 className='from-bg-blue-joker font-light w-auto	mx-auto bg-gray-400 mb-4'>No conversation selected</h1>
           <p style={{ textAlign: 'center' }}>
             Click a username on the left, or browse jokes to message other users.
           </p>
@@ -49,19 +49,19 @@ export default function MessageTextsHolder({ lgdInUser, allMsgsWOtherUser }) {
   }
 
   return (
-    <div className='messages__container messages__texts-holder'>
-      <h1 className='messages__title'>
+    <div className='flex flex-col from-gray-400 shadow-lg rounded-xl m-1 p-4 w-full justify-between'>
+      <h1 className='from-bg-blue-joker font-light w-auto	mx-auto bg-gray-400 mb-4'>
         {otherUser.id ? otherUser.username : 'No Conversation Selected'}
       </h1>
-      <div className='messages__texts-and-form'>
-        <div className='messages__texts'>
+      <div className='flex flex-col w-full m-0'>
+        <div className='overflow-scroll max-h-96 flex flex-col-reverse'>
           {otherUser &&
             allMsgsWOtherUser.map((msg) => (
               <div
                 className={
                   lgdInUser.id === msg.sender.id
-                    ? 'messages__texts__right'
-                    : 'messages__texts__left'
+                    ? 'self-end ml-3 flex flex-col items-end hover:cursor-pointer'
+                    : 'mr-3'
                 }
                 key={msg.id}
               >
@@ -73,13 +73,13 @@ export default function MessageTextsHolder({ lgdInUser, allMsgsWOtherUser }) {
                         }
                       : {}
                   }
-                  className='single-message-text'
+                  className='bg-blue-900 rounded-xl w-auto p-1 box-content m-0'
                   title={msg.sender.username}
                   onClick={lgdInUser.id === msg.sender.id ? () => handleDelete(msg) : undefined}
                 >
                   {msg.message}
                 </p>
-                <p className='timestamp'>{formatDate(msg.timestamp)}</p>
+                <p className='text-xs'>{formatDate(msg.timestamp)}</p>
               </div>
             ))}
         </div>
