@@ -25,18 +25,18 @@ export default function MessageForm() {
   };
 
   return (
-    <form onSubmit={onSend} className='msg-form'>
+    <form onSubmit={onSend} className='flex mt-1'>
       <textarea
         value={msg}
         onChange={(e) => {
           setMsg(e.target.value);
         }}
-        className='msg-form__input'
+        className='rounded-xl w-full p-1 font-serif text-base'
         maxLength={500}
         rows={3}
         required
       />
-      <button type='submit' className='msg-form__button'>
+      <button type='submit' className='bg-green-joker'>
         <i className='fas fa-play fa-2x'></i>
       </button>
     </form>
