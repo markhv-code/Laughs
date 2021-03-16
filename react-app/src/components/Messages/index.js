@@ -48,7 +48,7 @@ export default function Messages() {
     <>
       {allUsers && lgdInUser && allMsgsLgdInUser && allMsgsWOtherUser && (
         <OtherUserContext.Provider value={{ otherUser, setOtherUser }}>
-          <div className='messages'>
+          <div className='flex px-4 max-w-screen-lg h-screen m-auto'>
             <MessageUsersHolder
               allUsers={allUsers}
               lgdInUser={lgdInUser}
