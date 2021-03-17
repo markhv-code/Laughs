@@ -11,12 +11,12 @@ export default function SplashPage() {
                     <img className='' alt="Laughs App logo" src='https://pairyopet.s3-us-west-1.amazonaws.com/pyp-logo-cropped.png'></img>
                     Laughs
                 </div>
-                <div className="col-start-9 col-end-10">
-                        <LoginFormModal/>
-                </div>
-                <div className="col-start-10 col-end-10">
-                        <SignUpFormModal/>
-                </div>
+                <button className="h-1/2 text-xl text-center outline-black mt-4 pt-1 col-start-9 col-end-10 hover:bg-red-400">
+                        <LoginFormModal />
+                </button>
+                <button className="h-1/2 text-xl text-center outline-black mt-4 pt-1 col-start-10 col-end-10 hover:bg-red-400">
+                        <SignUpFormModal />
+                </button>
             </nav>
             <div className="grid grid-flow-col grid-cols-4 grid-rows-4">
                     <h1 className="text-4xl col-start-1 col-end-2 row-start-1 row-end-2 p-1 m-1">Sharing jokes around the world</h1>
