@@ -49,8 +49,12 @@ export default function MessageTextsHolder({ lgdInUser, allMsgsWOtherUser }) {
   }
 
   return (
-    <div className='flex flex-col from-gray-400 shadow-lg rounded-xl m-1 p-4 w-full justify-between'>
-      <h1 className='from-bg-blue-joker font-light w-auto	mx-auto bg-gray-400 mb-4'>
+    <div 
+    style={
+      {height: "fit-content",}
+    }
+    className='flex flex-col from-gray-400 shadow-lg rounded-xl m-1 p-4 w-full justify-between'>
+      <h1 className='from-bg-blue-joker font-light w-auto	mx-auto rounded-lg p-1 bg-gray-400 mb-4'>
         {otherUser.id ? otherUser.username : 'No Conversation Selected'}
       </h1>
       <div className='flex flex-col w-full m-0'>
@@ -71,9 +75,13 @@ export default function MessageTextsHolder({ lgdInUser, allMsgsWOtherUser }) {
                       ? {
                           background: 'rgba(13, 51, 223, 0.65)',
                         }
-                      : {}
+                      : {
+                          width: "fit-content",
+                          background: 'rgba(160, 225, 147, 0.65)',
+                        }
                   }
-                  className='bg-blue-900 rounded-xl w-auto p-1 box-content m-0'
+                  className='bg-blue-900 rounded-xl p-1 box-content m-0'
+
                   title={msg.sender.username}
                   onClick={lgdInUser.id === msg.sender.id ? () => handleDelete(msg) : undefined}
                 >
