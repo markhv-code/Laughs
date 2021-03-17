@@ -53,7 +53,7 @@ function LoginForm() {
         <div>
           <label htmlFor='email'>Email</label>
           <input
-            className="rounded-xl m-1 px-1"
+            className="rounded-lg m-1 px-1"
             name='email'
             type='text'
             placeholder='Email'
@@ -64,7 +64,7 @@ function LoginForm() {
         <div>
           <label htmlFor='password'>Password</label>
           <input
-            className="rounded-xl m-1 px-1"
+            className="rounded-lg m-1 px-1"
             name='password'
             type='password'
             placeholder='Password'
@@ -73,7 +73,7 @@ function LoginForm() {
           />
           <div className='text-center'>
             <button 
-              className='text-black rounded-xl m-1 px-1 bg-green-joker hover:bg-green-400'
+              className='text-black rounded-lg m-1 px-1 bg-green-joker hover:bg-green-400'
               type='submit'
             >
               Login</button>
@@ -82,7 +82,7 @@ function LoginForm() {
       </form>
       <form className='text-center' onSubmit={demoLogin}>
           <button 
-            className=' text-black rounded-xl m-1 px-1 bg-green-joker hover:bg-green-400'
+            className=' text-black rounded-lg m-1 px-1 bg-green-joker hover:bg-green-400'
             type='submit'
           >
             Demo Login</button>

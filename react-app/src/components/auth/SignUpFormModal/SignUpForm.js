@@ -71,7 +71,7 @@ function SignUpFormPage() {
         <div>
           <label>User Name</label>
           <input
-            className="rounded-xl m-1 px-1"
+            className="rounded-lg m-1 px-1"
             type='text'
             name='username'
             onChange={updateUsername}
@@ -81,7 +81,7 @@ function SignUpFormPage() {
         <div>
           <label>Email</label>
           <input
-            className="rounded-xl m-1 px-1"
+            className="rounded-lg m-1 px-1"
             type='text'
             name='email'
             onChange={updateEmail}
@@ -91,7 +91,7 @@ function SignUpFormPage() {
         <div>
           <label>Password</label>
           <input
-            className="rounded-xl m-1 px-1"
+            className="rounded-lg m-1 px-1"
             type='password'
             name='password'
             onChange={updatePassword}
@@ -101,7 +101,7 @@ function SignUpFormPage() {
         <div>
           <label>Repeat Password</label>
           <input
-            className="rounded-xl m-1 px-1"
+            className="rounded-lg m-1 px-1"
             type='password'
             name='repeat_password'
             onChange={updateRepeatPassword}
@@ -109,10 +109,16 @@ function SignUpFormPage() {
             required={true}
           ></input>
         </div>
-        <button type='submit'>Sign Up</button>
+        <div className='text-center'>
+          <button 
+          className='text-black rounded-lg m-1 px-1 bg-green-joker hover:bg-green-400'
+          type='submit'>Sign Up</button>
+        </div>
       </form>
-      <form onSubmit={demoLogin}>
-        <button type='submit'>Demo Login</button>
+      <form className='text-center' onSubmit={demoLogin}>
+        <button 
+        className='text-black rounded-lg m-1 px-1 bg-green-joker hover:bg-green-400'
+        type='submit'>Demo Login</button>
       </form>
     </>
   );
