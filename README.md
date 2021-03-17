@@ -1,10 +1,10 @@
-Starter# Laughs
+# Laughs
 
 <p align='left'>
-    <img src="https://pair-yo-pet-aws.s3-us-west-1.amazonaws.com/pyp-logo-cropped.png">
+    <img src="https://pairyopet.s3-us-west-1.amazonaws.com/pyp-logo-cropped.png">
 </p>
 
-[![Contributors](https://img.shields.io/github/contributors/markhv-code/pair-yo-pet)](https://www.github.com/markhv-code/Laughs/contributors)
+[![Contributors](https://img.shields.io/github/contributors/markhv-code/Laughs)](https://www.github.com/markhv-code/Laughs/contributors)
 [![Open Issues](https://img.shields.io/github/issues/markhv-code/Laughs)](https://www.github.com/markhv-code/Laughs/issues)
 [![Forks](https://img.shields.io/github/forks/markhv-code/Laughs)](https://www.github.com/markhv-code/Laughs/forks)
 [![Stars](https://img.shields.io/github/stars/markhv-code/Laughs)](https://www.github.com/markhv-code/Laughs/stars)
