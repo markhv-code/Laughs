@@ -6,7 +6,7 @@ import { useModalAndAuthContext } from "../../context/ModalAndAuth";
 export default function SplashPage() {
   return (
     <>
-      <nav className="bg-red-joker h-20 grid grid-flow-col grid-cols-10 grid-rows-1 gap-x-3">
+      <nav className="bg-gradient-to-r from-blue-joker via-red-joker to-green-joker h-20 grid grid-flow-col grid-cols-10 grid-rows-1 gap-x-3">
         <div className="col-start-5 col-end-5">
           <img
             style={{ height: "99%", width: "auto",}}
@@ -15,10 +15,10 @@ export default function SplashPage() {
           ></img>
         </div>
         <div className="col-start-6 col-end-6 text-4xl mt-5 pt-1">Laughs</div>
-        <button className="h-1/2 text-xl text-center outline-black mt-4 pt-1 mr-4 col-start-9 col-end-10 hover:bg-red-400">
+        <button className="h-1/2 text-xl text-center outline-black mt-4 pt-1 mr-4 col-start-9 col-end-10 hover:bg-white">
           <LoginFormModal />
         </button>
-        <button className="h-1/2 text-xl text-center outline-black mt-4 pt-1 mr-4 col-start-10 col-end-10 hover:bg-red-400">
+        <button className="h-1/2 text-xl text-center outline-black mt-4 pt-1 mr-4 col-start-10 col-end-10 hover:bg-white">
           <SignUpFormModal />
         </button>
       </nav>
