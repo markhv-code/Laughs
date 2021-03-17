@@ -4,10 +4,10 @@ Starter# Laughs
     <img src="https://pair-yo-pet-aws.s3-us-west-1.amazonaws.com/pyp-logo-cropped.png">
 </p>
 
-[![Contributors](https://img.shields.io/github/contributors/markhv-code/pair-yo-pet)](https://www.github.com/markhv-code/pair-yo-pet/contributors)
-[![Open Issues](https://img.shields.io/github/issues/markhv-code/pair-yo-pet)](https://www.github.com/markhv-code/pair-yo-pet/issues)
-[![Forks](https://img.shields.io/github/forks/markhv-code/pair-yo-pet)](https://www.github.com/markhv-code/pair-yo-pet/forks)
-[![Stars](https://img.shields.io/github/stars/markhv-code/pair-yo-pet)](https://www.github.com/markhv-code/pair-yo-pet/stars)
+[![Contributors](https://img.shields.io/github/contributors/markhv-code/pair-yo-pet)](https://www.github.com/markhv-code/Laughs/contributors)
+[![Open Issues](https://img.shields.io/github/issues/markhv-code/Laughs)](https://www.github.com/markhv-code/Laughs/issues)
+[![Forks](https://img.shields.io/github/forks/markhv-code/Laughs)](https://www.github.com/markhv-code/Laughs/forks)
+[![Stars](https://img.shields.io/github/stars/markhv-code/Laughs)](https://www.github.com/markhv-code/Laughs/stars)
 
 ## What is it?
 
@@ -42,101 +42,30 @@ To run this application locally, you'll need to:
 - React
 - Redux
 - JavaScript
-- Vanilla CSS
+- TailWindCSS
 - Node.js
 - AWS S3
 - Docker
 - Heroku
 
+
 ## Live Site
 
-[Here's](https://pairyopet.herokuapp.com/) a link to our live app!
+[Here's](https://laughs-app.herokuapp.com/) a link to our live app!
 
 ## Documentation
 
-[Here's](https://github.com/markhv-code/pair-yo-pet/wiki/) a link to our Wiki!
+[Here's](https://github.com/markhv-code/Laughs/wiki/) a link to our Wiki!
 
 ## Features
 
 Users can:
 
-- Add a pet
-- Update their pets
-- Browse open pets and choose to connect
-- Message other owners
-- Search for specific pets based on name, state, and city
+- Post a joke
+- Update their joke
+- Browse jokes and comment on jokes
+- Message others
+- Search for specific jokes
 
-## Best Code Snippets
 
-This was how we initialized conversations for user on the `/messages` route.
 
-```js
-// filter for all messages from or to logged in user
-const msgsArray = Object.values(allMsgs);
-const allMsgsLgdInUser = msgsArray.filter(
-  (message) =>
-    message.senderId === lgdInUser.id || message.receiverId === lgdInUser.id
-);
-
-// filter again for all messages between logged in user and other user (chosen user)
-const allMsgsWOtherUser = allMsgsLgdInUser.filter((message) => {
-  const idToCheck = otherUser.id;
-  return message.senderId === idToCheck || message.receiverId === idToCheck;
-});
-```
-
-```js
-// Find all users (only once) that the logged in user has had cnv with
-const set = new Set();
-const cnvUserIdArr = [];
-
-for (let i = allMsgsLgdInUser.length - 1; i > 0; i--) {
-  let msg = allMsgsLgdInUser[i];
-  const idToAdd = msg.senderId === lgdInUser.id ? msg.receiverId : msg.senderId;
-  if (!set.has(idToAdd)) cnvUserIdArr.push(idToAdd);
-  set.add(idToAdd);
-}
-
-const cnvUsers = [];
-cnvUserIdArr.forEach((id) => cnvUsers.push(allUsers[id]));
-if (cnvUsers.length === 0) cnvUsers.push({ username: 'No message history' });
-```
-
-For our search feature we needed to connect each pet with the location of their owner for location based searching.
-
-```py
-owner = db.relationship("User", back_populates="pets")
-
-    def to_dict(self):
-        return {
-            "id": self.id,
-            "userId": self.userId,
-            "name": self.name,
-            "petType": self.petType,
-            "age": self.age,
-            "imageURL": self.imageURL,
-            "energy": self.energy,
-            "social": self.social,
-            "behaved": self.behaved,
-            "size": self.size,
-            "env": self.env,
-            "description": self.description,
-            "owner": self.owner.to_dict()
-        }
-```
-
-Here we implement the database connection in the search file with a `useEffect`.
-
-```js
-useEffect(() => {
-  setFilteredPets(
-    petsFromStore.filter(
-      (pet) =>
-        pet.name.toLowerCase().includes(search.toLowerCase()) ||
-        pet.petType.toLowerCase().includes(search.toLowerCase()) ||
-        pet.owner.city.toLowerCase().includes(search.toLowerCase()) ||
-        pet.owner.stateAbbr.toLowerCase().includes(search.toLowerCase())
-    )
-  );
-}, [search]);
-```
