@@ -23,6 +23,13 @@ function LoginForm() {
     }
   };
 
+  const demoLogin = async (e) => {
+    e.preventDefault();
+    const user = await login('demo@aa.io', 'password');
+    dispatch(setUser(user));
+    setAuthenticated(true);
+  };
+
   const updateEmail = (e) => {
     setEmail(e.target.value);
   };
@@ -36,34 +43,51 @@ function LoginForm() {
   }
 
   return (
-    <form onSubmit={onLogin}>
-      <div>
-        {errors.map((error) => (
-          <div>{error}</div>
-        ))}
-      </div>
-      <div>
-        <label htmlFor='email'>Email</label>
-        <input
-          name='email'
-          type='text'
-          placeholder='Email'
-          value={email}
-          onChange={updateEmail}
-        />
-      </div>
-      <div>
-        <label htmlFor='password'>Password</label>
-        <input
-          name='password'
-          type='password'
-          placeholder='Password'
-          value={password}
-          onChange={updatePassword}
-        />
-        <button type='submit'>Login</button>
-      </div>
-    </form>
+    <>
+      <form onSubmit={onLogin}>
+        <div>
+          {errors.map((error) => (
+            <div>{error}</div>
+          ))}
+        </div>
+        <div>
+          <label htmlFor='email'>Email</label>
+          <input
+            className="rounded-lg m-1 px-1"
+            name='email'
+            type='text'
+            placeholder='Email'
+            value={email}
+            onChange={updateEmail}
+          />
+        </div>
+        <div>
+          <label htmlFor='password'>Password</label>
+          <input
+            className="rounded-lg m-1 px-1"
+            name='password'
+            type='password'
+            placeholder='Password'
+            value={password}
+            onChange={updatePassword}
+          />
+          <div className='text-center'>
+            <button 
+              className='text-black rounded-lg m-1 px-1 bg-green-joker hover:bg-green-400'
+              type='submit'
+            >
+              Login</button>
+          </div>
+          </div>
+      </form>
+      <form className='text-center' onSubmit={demoLogin}>
+          <button 
+            className=' text-black rounded-lg m-1 px-1 bg-green-joker hover:bg-green-400'
+            type='submit'
+          >
+            Demo Login</button>
+      </form>
+    </>
   );
 }
 
