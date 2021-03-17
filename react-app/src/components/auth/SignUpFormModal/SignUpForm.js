@@ -4,6 +4,7 @@ import { Redirect } from 'react-router-dom';
 import { signUp } from '../../../services/auth';
 import { useModalAndAuthContext } from '../../../context/ModalAndAuth';
 import { setUser } from '../../../store/session';
+import { login } from '../../../services/auth';
 
 function SignUpFormPage() {
   const { authenticated, setAuthenticated } = useModalAndAuthContext();
@@ -32,6 +33,12 @@ function SignUpFormPage() {
     }
   };
 
+  const demoLogin = async (e) => {
+    e.preventDefault();
+    const user = await login('demo@aa.io', 'password');
+    dispatch(setUser(user));
+  };
+
   const updateUsername = (e) => {
     setUsername(e.target.value);
   };
@@ -53,51 +60,56 @@ function SignUpFormPage() {
   }
 
   return (
-    <form onSubmit={onSignUp}>
-      <div>
-        {errors.map((error) => (
-          <div>{error}</div>
-        ))}
-      </div>
-      <div>
-        <label>User Name</label>
-        <input
-          type='text'
-          name='username'
-          onChange={updateUsername}
-          value={username}
-        ></input>
-      </div>
-      <div>
-        <label>Email</label>
-        <input
-          type='text'
-          name='email'
-          onChange={updateEmail}
-          value={email}
-        ></input>
-      </div>
-      <div>
-        <label>Password</label>
-        <input
-          type='password'
-          name='password'
-          onChange={updatePassword}
-          value={password}
-        ></input>
-      </div>
-      <div>
-        <label>Repeat Password</label>
-        <input
-          type='password'
-          name='repeat_password'
-          onChange={updateRepeatPassword}
-          value={repeatPassword}
-          required={true}
-        ></input>
-      </div>
-      <button type='submit'>Sign Up</button>
-    </form>
+    <>
+      <form onSubmit={onSignUp}>
+        <div>
+          {errors.map((error) => (
+            <div>{error}</div>
+          ))}
+        </div>
+        <div>
+          <label>User Name</label>
+          <input
+            type='text'
+            name='username'
+            onChange={updateUsername}
+            value={username}
+          ></input>
+        </div>
+        <div>
+          <label>Email</label>
+          <input
+            type='text'
+            name='email'
+            onChange={updateEmail}
+            value={email}
+          ></input>
+        </div>
+        <div>
+          <label>Password</label>
+          <input
+            type='password'
+            name='password'
+            onChange={updatePassword}
+            value={password}
+          ></input>
+        </div>
+        <div>
+          <label>Repeat Password</label>
+          <input
+            type='password'
+            name='repeat_password'
+            onChange={updateRepeatPassword}
+            value={repeatPassword}
+            required={true}
+          ></input>
+        </div>
+        <button type='submit'>Sign Up</button>
+      </form>
+      <form onSubmit={demoLogin}>
+        <button type='submit'>Demo Login</button>
+      </form>
+    </>
   );
 }
 
