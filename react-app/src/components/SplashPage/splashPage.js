@@ -6,15 +6,15 @@ import { useModalAndAuthContext } from '../../context/ModalAndAuth';
 export default function SplashPage() {
     return (
         <>
-            <nav className='bg-red-joker h-20 grid grid-flow-col grid-cols-10 grid-rows-1'>
-                <div className="h-1/2">
-                    <img className='' alt="Laughs App logo" src='https://pairyopet.s3-us-west-1.amazonaws.com/pyp-logo-cropped.png'></img>
-                    Laughs
+            <nav className='bg-red-joker h-20 grid grid-flow-col grid-cols-10 grid-rows-1 gap-x-3'>
+                <div className="col-start-5 col-end-5">
+                    <img style={{ height: "99%", width: "auto" }} alt="Laughs App logo" src='https://pairyopet.s3-us-west-1.amazonaws.com/pyp-logo-cropped.png'></img>
                 </div>
-                <button className="h-1/2 text-xl text-center outline-black mt-4 pt-1 col-start-9 col-end-10 hover:bg-red-400">
+                <div className="col-start-6 col-end-6 text-4xl mt-4 pt-1">Laughs</div>
+                <button className="h-1/2 text-xl text-center outline-black mt-4 pt-1 mr-4 col-start-9 col-end-10 hover:bg-red-400">
                         <LoginFormModal />
                 </button>
-                <button className="h-1/2 text-xl text-center outline-black mt-4 pt-1 col-start-10 col-end-10 hover:bg-red-400">
+                <button className="h-1/2 text-xl text-center outline-black mt-4 pt-1 mr-4 col-start-10 col-end-10 hover:bg-red-400">
                         <SignUpFormModal />
                 </button>
             </nav>
