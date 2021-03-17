@@ -1,99 +1,142 @@
-# Flask React Project
+Starter# Laughs
 
-This is the backend for the Flask React project.
+<p align='left'>
+    <img src="https://pair-yo-pet-aws.s3-us-west-1.amazonaws.com/pyp-logo-cropped.png">
+</p>
 
-## Getting started
+[![Contributors](https://img.shields.io/github/contributors/markhv-code/pair-yo-pet)](https://www.github.com/markhv-code/pair-yo-pet/contributors)
+[![Open Issues](https://img.shields.io/github/issues/markhv-code/pair-yo-pet)](https://www.github.com/markhv-code/pair-yo-pet/issues)
+[![Forks](https://img.shields.io/github/forks/markhv-code/pair-yo-pet)](https://www.github.com/markhv-code/pair-yo-pet/forks)
+[![Stars](https://img.shields.io/github/stars/markhv-code/pair-yo-pet)](https://www.github.com/markhv-code/pair-yo-pet/stars)
 
-1. Clone this repository (only this branch)
+## What is it?
 
-   ```bash
-   git clone https://github.com/appacademy-starters/python-project-starter.git
-   ```
+Laughs is a web web app built to be a social platform for sharing jokes and connecting with others!
 
-2. Install dependencies
+## Developing
 
-      ```bash
-      pipenv install --dev -r dev-requirements.txt && pipenv install -r requirements.txt
-      ```
+To run this application locally, you'll need to:
 
-3. Create a **.env** file based on the example with proper settings for your
-   development environment
-4. Setup your PostgreSQL user, password and database and make sure it matches your **.env** file
+1. `git clone` this repo
+2. `cd` into the local repo
+3. `pipenv install` to install the backend dependencies
+4. Create a `.env` file based on the `.env.example` file included in the repo with your own values
+5. Create a user on your local machine with the username and password specified in your `.env` file in PostgreSQL
+6. Create a database on your local machine with the name specified in your `.env` file in PostgreSQL
+7. Go into the pipenv shell with `pipenv shell`
+8. Run `flask db upgrade` to run the migrations
+9. Run `flask seed all` to seed the database
+10. Open another terminal and cd into the `react-app` directory and run `npm install` to install frontend dependencies
+11. Create your own `.env` file in the `react-app` directory based on the `.env.example` there
+12. Start your Flask backend in the terminal that's in the root of the local project with `flask run`
+13. Finally, start the frontend server with `npm start` inside the `react-app` directory. The application should automatically open in your default web browser.
+14. If you desire further modifications simply create a new branch and `git push` your changes to Github.
 
-5. Get into your pipenv, migrate your database, seed your database, and run your flask app
+## Technologies Used
 
-   ```bash
-   pipenv shell
-   ```
+- Python
+- PostgreSQL
+- SQLAlchemy
+- Flask
+- WTForms
+- React
+- Redux
+- JavaScript
+- Vanilla CSS
+- Node.js
+- AWS S3
+- Docker
+- Heroku
 
-   ```bash
-   flask db upgrade
-   ```
+## Live Site
 
-   ```bash
-   flask seed all
-   ```
+[Here's](https://pairyopet.herokuapp.com/) a link to our live app!
 
-   ```bash
-   flask run
-   ```
+## Documentation
 
-6. To run the React App in development, checkout the [README](./react-app/README.md) inside the `react-app` directory.
+[Here's](https://github.com/markhv-code/pair-yo-pet/wiki/) a link to our Wiki!
 
-***
-*IMPORTANT!*
-   If you add any python dependencies to your pipfiles, you'll need to regenerate your requirements.txt before deployment.
-   You can do this by running:
+## Features
 
-   ```bash
-   pipenv lock -r > requirements.txt
-   ```
+Users can:
 
-*ALSO IMPORTANT!*
-   psycopg2-binary MUST remain a dev dependency because you can't install it on apline-linux.
-   There is a layer in the Dockerfile that will install psycopg2 (not binary) for us.
-***
+- Add a pet
+- Update their pets
+- Browse open pets and choose to connect
+- Message other owners
+- Search for specific pets based on name, state, and city
 
-## Deploy to Heroku
+## Best Code Snippets
 
-1. Create a new project on Heroku
-2. Under Resources click "Find more add-ons" and add the add on called "Heroku Postgres"
-3. Install the [Heroku CLI](https://devcenter.heroku.com/articles/heroku-command-line)
-4. Run
+This was how we initialized conversations for user on the `/messages` route.
 
-   ```bash
-   heroku login
-   ```
+```js
+// filter for all messages from or to logged in user
+const msgsArray = Object.values(allMsgs);
+const allMsgsLgdInUser = msgsArray.filter(
+  (message) =>
+    message.senderId === lgdInUser.id || message.receiverId === lgdInUser.id
+);
 
-5. Login to the heroku container registry
+// filter again for all messages between logged in user and other user (chosen user)
+const allMsgsWOtherUser = allMsgsLgdInUser.filter((message) => {
+  const idToCheck = otherUser.id;
+  return message.senderId === idToCheck || message.receiverId === idToCheck;
+});
+```
 
-   ```bash
-   heroku container:login
-   ```
+```js
+// Find all users (only once) that the logged in user has had cnv with
+const set = new Set();
+const cnvUserIdArr = [];
 
-6. Update the `REACT_APP_BASE_URL` variable in the Dockerfile.
-   This should be the full URL of your Heroku app: i.e. "https://flask-react-aa.herokuapp.com"
-7. Push your docker container to heroku from the root directory of your project.
-   This will build the dockerfile and push the image to your heroku container registry
+for (let i = allMsgsLgdInUser.length - 1; i > 0; i--) {
+  let msg = allMsgsLgdInUser[i];
+  const idToAdd = msg.senderId === lgdInUser.id ? msg.receiverId : msg.senderId;
+  if (!set.has(idToAdd)) cnvUserIdArr.push(idToAdd);
+  set.add(idToAdd);
+}
 
-   ```bash
-   heroku container:push web -a {NAME_OF_HEROKU_APP}
-   ```
+const cnvUsers = [];
+cnvUserIdArr.forEach((id) => cnvUsers.push(allUsers[id]));
+if (cnvUsers.length === 0) cnvUsers.push({ username: 'No message history' });
+```
 
-8. Release your docker container to heroku
+For our search feature we needed to connect each pet with the location of their owner for location based searching.
 
-   ```bash
-   heroku container:release web -a {NAME_OF_HEROKU_APP}
-   ```
+```py
+owner = db.relationship("User", back_populates="pets")
 
-9. set up your database:
+    def to_dict(self):
+        return {
+            "id": self.id,
+            "userId": self.userId,
+            "name": self.name,
+            "petType": self.petType,
+            "age": self.age,
+            "imageURL": self.imageURL,
+            "energy": self.energy,
+            "social": self.social,
+            "behaved": self.behaved,
+            "size": self.size,
+            "env": self.env,
+            "description": self.description,
+            "owner": self.owner.to_dict()
+        }
+```
 
-   ```bash
-   heroku run -a {NAME_OF_HEROKU_APP} flask db upgrade
-   heroku run -a {NAME_OF_HEROKU_APP} flask seed all
-   ```
+Here we implement the database connection in the search file with a `useEffect`.
 
-10. Under Settings find "Config Vars" and add any additional/secret .env variables.
-
-11. profit
-# pimp-yo-pets
+```js
+useEffect(() => {
+  setFilteredPets(
+    petsFromStore.filter(
+      (pet) =>
+        pet.name.toLowerCase().includes(search.toLowerCase()) ||
+        pet.petType.toLowerCase().includes(search.toLowerCase()) ||
+        pet.owner.city.toLowerCase().includes(search.toLowerCase()) ||
+        pet.owner.stateAbbr.toLowerCase().includes(search.toLowerCase())
+    )
+  );
+}, [search]);
+```
