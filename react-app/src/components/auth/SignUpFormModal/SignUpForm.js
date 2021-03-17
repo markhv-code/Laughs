@@ -37,6 +37,7 @@ function SignUpFormPage() {
     e.preventDefault();
     const user = await login('demo@aa.io', 'password');
     dispatch(setUser(user));
+    setAuthenticated(true);
   };
 
   const updateUsername = (e) => {
@@ -70,6 +71,7 @@ function SignUpFormPage() {
         <div>
           <label>User Name</label>
           <input
+            className="rounded-xl m-1 px-1"
             type='text'
             name='username'
             onChange={updateUsername}
@@ -79,6 +81,7 @@ function SignUpFormPage() {
         <div>
           <label>Email</label>
           <input
+            className="rounded-xl m-1 px-1"
             type='text'
             name='email'
             onChange={updateEmail}
@@ -88,6 +91,7 @@ function SignUpFormPage() {
         <div>
           <label>Password</label>
           <input
+            className="rounded-xl m-1 px-1"
             type='password'
             name='password'
             onChange={updatePassword}
@@ -97,6 +101,7 @@ function SignUpFormPage() {
         <div>
           <label>Repeat Password</label>
           <input
+            className="rounded-xl m-1 px-1"
             type='password'
             name='repeat_password'
             onChange={updateRepeatPassword}
