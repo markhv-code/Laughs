@@ -10,6 +10,7 @@ import User from './components/Users/User';
 import SplashPage from './components/SplashPage/splashPage'
 import HomeFeed from "./components/HomeFeed/index";
 import Messages from './components/Messages';
+import Footer from './components/Footer/Footer'
 
 
 import { useModalAndAuthContext } from './context/ModalAndAuth';
@@ -80,6 +81,7 @@ function App() {
           <Messages />
         </ProtectedRoute>
       </Switch>
+      <Footer/>
     </BrowserRouter>
   );
 }
