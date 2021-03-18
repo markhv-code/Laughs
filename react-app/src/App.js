@@ -72,6 +72,7 @@ function App() {
         </ProtectedRoute>
         <ProtectedRoute path='/home' exact={true} authenticated={!!sessionUser}>
           <HomeFeed />
+          <Footer />
         </ProtectedRoute>
         <ProtectedRoute
           path='/messages'
@@ -79,9 +80,10 @@ function App() {
           authenticated={!!sessionUser}
           >
           <Messages />
+          <Footer />
         </ProtectedRoute>
       </Switch>
-      <Footer/>
+      {/* <Footer/> */}
     </BrowserRouter>
   );
 }

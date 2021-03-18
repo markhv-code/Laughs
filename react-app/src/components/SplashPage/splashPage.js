@@ -1,11 +1,10 @@
 import SignUpFormModal from "../auth/SignUpFormModal";
 import LoginFormModal from "../auth/LoginFormModal";
-import { NavLink } from "react-router-dom";
-import { useModalAndAuthContext } from "../../context/ModalAndAuth";
+import Footer from "../Footer/Footer"
 
 export default function SplashPage() {
   return (
-    <>
+    <div>
       <nav className="bg-gradient-to-r from-blue-joker via-red-joker to-green-joker h-20 grid grid-flow-col grid-cols-10 grid-rows-1 gap-x-3">
         <div className="col-start-5 col-end-5">
           <img
@@ -37,6 +36,9 @@ export default function SplashPage() {
           ></img>
         </div>
       </div>
-    </>
+      <div className="absolute bottom-0 w-full">
+        <Footer />
+      </div>
+    </div>
   );
 }

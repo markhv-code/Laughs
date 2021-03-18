@@ -2,7 +2,7 @@
 const Footer = () => {
 
     return (
-        <div className='py-1 absolute bottom-0 w-full h-16 text-xl bg-gradient-to-r from-blue-joker via-red-joker to-green-joker grid grid-flow-col grid-cols-10 grid-rows-1 gap-x-3'>
+        <div className='py-1 w-full h-16 text-xl bg-gradient-to-r from-blue-joker via-red-joker to-green-joker grid grid-flow-col grid-cols-10 grid-rows-1 gap-x-3'>
             <p>&#169; Mark Valdez</p>
             <div className="col-start-5 col-end-5">
                 <a  className="pt-4 hover:shadow-2xl" href='https://github.com/markhv-code/pair-yo-pet'>Github Repo</a>

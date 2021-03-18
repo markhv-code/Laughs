@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { NavLink } from "react-router-dom";
+import Footer from "../Footer/Footer"
 
 function UsersList() {
   const [users, setUsers] = useState([]);
@@ -25,6 +26,9 @@ function UsersList() {
     <>
       <h1>User List: </h1>
       <ul>{userComponents}</ul>
+      <div className="absolute bottom-0 w-full">
+        <Footer />
+      </div>
     </>
   );
 }
