@@ -17,9 +17,9 @@ const NavBar = () => {
 
   return (
     <header className='site-header'>
-      <nav className='navbar'>
+      <nav className='navbar bg-gradient-to-r from-blue-joker via-red-joker to-green-joker'>
         <div>
-          <img className="logo" alt="Laughs App logo" src="/images/pyp-logo-cropped.png"></img>
+          <img className="logo" alt="Laughs App logo" src="https://pairyopet.s3-us-west-1.amazonaws.com/pyp-logo-cropped.png"></img>
         </div>
         <ul className='navbar__links'>
           <li className='navbar__link'>
