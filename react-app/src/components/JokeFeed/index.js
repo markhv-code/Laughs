@@ -7,6 +7,7 @@ export default function JokeFeed() {
     dispatch(getJokes);
     const allJokes = useSelector(state => Object.values(state.jokes));
     const jokeComments = useSelector(state => Object.values(state.threads));
+    const allUsers = useSelector(state => Object.values(state.users));
     // const jokeComments = comments.length ? comments : [];
     // console.log("----------jokeComments-------", jokeComments);
 
@@ -23,11 +24,13 @@ export default function JokeFeed() {
                             <h3>Joke Type: {jokeType}</h3>
                             <h3>{myDate.toLocaleString()}</h3>
                             <h3 className="text-lg">{joke}</h3>
-                            {filteredComments && filteredComments.map(comment => (
-                                <div key={comment.id} className="text-sm text-center">
-                                    {comment.comment}
-                                </div>
-                            ))}
+                            {filteredComments && filteredComments.map(comment => {
+                                let user = allUsers.filter(usrObj => (usrObj.id === comment.userId));
+                                console.log(user, "---------user-------");
+                                return (<div key={comment.id} className="text-sm text-center">
+                                    {user[0].username}: {comment.comment}
+                                </div>)
+            })}
                             <ThreadForm id={id} />
                     </div>
                 )
