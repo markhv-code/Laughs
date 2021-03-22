@@ -14,12 +14,12 @@ export default function SplashPage() {
           ></img>
         </div>
         <div className="col-start-6 col-end-6 text-4xl mt-5 pt-1">Laughs</div>
-        <button className="h-1/2 text-xl text-center outline-black mt-4 pt-1 mr-4 col-start-9 col-end-10 hover:bg-white">
+        <div className="h-1/2 text-xl text-center outline-black mt-4 pt-1 mr-4 col-start-9 col-end-10 hover:bg-white">
           <LoginFormModal />
-        </button>
-        <button className="h-1/2 text-xl text-center outline-black mt-4 pt-1 mr-4 col-start-10 col-end-10 hover:bg-white">
+        </div>
+        <div className="h-1/2 text-xl text-center outline-black mt-4 pt-1 mr-4 col-start-10 col-end-10 hover:bg-white">
           <SignUpFormModal />
-        </button>
+        </div>
       </nav>
       <div className="grid grid-flow-col grid-cols-4 grid-rows-4">
         <h1 className="text-4xl col-start-1 col-end-2 row-start-1 row-end-2 p-1 m-1">
