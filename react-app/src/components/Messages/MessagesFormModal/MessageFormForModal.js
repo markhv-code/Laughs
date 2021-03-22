@@ -32,13 +32,13 @@ export default function MessageFormForModal({ receiver, setShowModal }) {
           onChange={(e) => {
             setMsg(e.target.value);
           }}
-          className='msg-form__input'
+          className='bg-gray-500'
           maxLength={500}
           rows={3}
           required
         />
         <button type='submit' className='msg-form-modal__button'>
-          <i className='fas fa-play fa-2x'></i>
+          <i className='fas fa-play fa-2x'>Send</i>
         </button>
       </div>
     </form>

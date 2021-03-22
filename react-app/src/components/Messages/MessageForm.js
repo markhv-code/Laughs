@@ -31,13 +31,13 @@ export default function MessageForm() {
         onChange={(e) => {
           setMsg(e.target.value);
         }}
-        className='rounded-xl w-full p-1 font-serif text-base'
+        className='rounded-xl w-full p-1 font-serif text-base bg-gray-300'
         maxLength={500}
         rows={3}
         required
       />
-      <button type='submit' className='bg-green-joker'>
-        <i className='fas fa-play fa-2x'></i>
+      <button type='submit' className='bg-green-joker rounded-xl m-1 p-1'>
+        <i className='m-1 p-1'>Send</i>
       </button>
     </form>
   );
