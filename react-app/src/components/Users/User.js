@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 
-import MessageFormModal from '../Messages/MessageFormModal'
+import MessageFormModal from '../Messages/MessagesFormModal/index'
 
 function User() {
   const [user, setUser] = useState({});
@@ -38,7 +38,7 @@ function User() {
         </li>
       </ul>
       <div>
-        <MessageFormModal />
+        <MessageFormModal receiver={user}/>
       </div>
     </>
   );

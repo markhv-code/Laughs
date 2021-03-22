@@ -8,6 +8,7 @@ export default function MessageFormForModal({ receiver, setShowModal }) {
 
   const lgdInUserId = useSelector((state) => state.session.user.id);
 
+  console.log("lgdIn----------", receiver)
   const onSend = async function (e) {
     e.preventDefault();
     const msgOrErrors = await dispatch(
@@ -25,20 +26,20 @@ export default function MessageFormForModal({ receiver, setShowModal }) {
 
   return (
     <form onSubmit={onSend} className='msg-form-modal'>
-      <h2>Message {receiver.username}</h2>
-      <div className='msg-form-modal__msg-and-btn'>
+      <h2 className="m-1 p-1">Message {receiver.username}</h2>
+      <div className='w-60'>
         <textarea
           value={msg}
           onChange={(e) => {
             setMsg(e.target.value);
           }}
-          className='bg-gray-500'
+          className='bg-gray-400 rounded-xl m-1 p-1 text-black'
           maxLength={500}
           rows={3}
           required
         />
-        <button type='submit' className='msg-form-modal__button'>
-          <i className='fas fa-play fa-2x'>Send</i>
+        <button type='submit' className='bg-green-joker rounded-xl m-1 p-1 text-black'>
+          <i className='m-1 p-1'>Send</i>
         </button>
       </div>
     </form>
