@@ -69,9 +69,9 @@ function SignUpFormPage() {
           ))}
         </div>
         <div>
-          <label>User Name</label>
+          <label className="ml-1">User Name</label>
           <input
-            className="rounded-lg m-1 px-1"
+            className="rounded-lg m-1 px-1 w-full"
             type='text'
             name='username'
             onChange={updateUsername}
@@ -79,9 +79,9 @@ function SignUpFormPage() {
           ></input>
         </div>
         <div>
-          <label>Email</label>
+          <label className="ml-1">Email</label>
           <input
-            className="rounded-lg m-1 px-1"
+            className="rounded-lg m-1 px-1 w-full"
             type='text'
             name='email'
             onChange={updateEmail}
@@ -89,9 +89,9 @@ function SignUpFormPage() {
           ></input>
         </div>
         <div>
-          <label>Password</label>
+          <label className="ml-1">Password</label>
           <input
-            className="rounded-lg m-1 px-1"
+            className="rounded-lg m-1 px-1 w-full"
             type='password'
             name='password'
             onChange={updatePassword}
@@ -99,9 +99,9 @@ function SignUpFormPage() {
           ></input>
         </div>
         <div>
-          <label>Repeat Password</label>
+          <label className="ml-1">Repeat Password</label>
           <input
-            className="rounded-lg m-1 px-1"
+            className="rounded-lg m-1 px-1 w-full"
             type='password'
             name='repeat_password'
             onChange={updateRepeatPassword}
