@@ -99,7 +99,7 @@ function SignUpFormPage() {
           ></input>
         </div>
         <div>
-          <label className="ml-1">Repeat Password</label>
+          <label className="ml-1">Confirm Password</label>
           <input
             className="rounded-lg m-1 px-1 w-full"
             type='password'
@@ -111,13 +111,13 @@ function SignUpFormPage() {
         </div>
         <div className='text-center'>
           <button 
-          className='text-black rounded-lg m-1 px-1 bg-green-joker hover:bg-green-400'
+          className='text-black rounded-lg m-1 px-1 bg-green-joker hover:bg-green-400 w-2/5'
           type='submit'>Sign Up</button>
         </div>
       </form>
       <form className='text-center' onSubmit={demoLogin}>
         <button 
-        className='text-black rounded-lg m-1 px-1 bg-green-joker hover:bg-green-400'
+        className='text-black rounded-lg m-1 px-1 bg-green-joker hover:bg-green-400 w-2/5'
         type='submit'>Demo Login</button>
       </form>
     </>
