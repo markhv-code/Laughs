@@ -11,6 +11,9 @@ module.exports = {
         'red-joker': '#ec535f',
         'blue-joker': '#94bfff'
       },
+      backgroundImage: theme => ({
+         'guy-pattern': "url('https://pairyopet.s3-us-west-1.amazonaws.com/laughing-man-holding-pen-in-meeting.jpg')",
+      }),
     },
   },
   variants: {
