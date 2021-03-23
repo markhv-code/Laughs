@@ -4,7 +4,7 @@ import Footer from "../Footer/Footer"
 
 export default function SplashPage() {
   return (
-    <div>
+    <div className="bg-guy-pattern bg-cover">
       <nav className="bg-gradient-to-r from-blue-joker via-red-joker to-green-joker h-20 grid grid-flow-col grid-cols-10 grid-rows-1 gap-x-3">
         <div className="col-start-5 col-end-5">
           <img
@@ -21,7 +21,7 @@ export default function SplashPage() {
           <SignUpFormModal />
         </div>
       </nav>
-      <div className="grid grid-flow-col grid-cols-4 grid-rows-4">
+      <div className="h-full grid grid-flow-col grid-cols-4 grid-rows-4">
         <h1 className="text-4xl col-start-1 col-end-2 row-start-1 row-end-2 p-1 m-1">
           Sharing jokes around the world
         </h1>
@@ -29,11 +29,11 @@ export default function SplashPage() {
           Use Laughs and all its features for free, forever!
         </h2>
         <div className="col-start-2 col-end-5 row-start-1 row-end-4">
-          <img
+          {/* <img
             className="rounded-lg md:w-1/2"
             alt="Laughing Man"
             src="https://pairyopet.s3-us-west-1.amazonaws.com/laughing-man-holding-pen-in-meeting.jpg"
-          ></img>
+          ></img> */}
         </div>
       </div>
       <div className="absolute bottom-0 w-full">
