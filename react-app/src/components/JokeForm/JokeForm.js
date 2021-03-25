@@ -86,14 +86,14 @@ function JokeForm() {
           />
         </div>
         <div className="grid grid-flow-col grid-cols-3 grid-rows-1 gap-1">
-          <div className="h-20">
+          <div className="h-20 pt-2">
             <label>Joke Type</label>
             <select
               name="jokeType"
               value={jokeType}
               onChange={(e) => setJokeType(e.target.value)}
               required
-              // className='joke-form__input'
+              // className='self-center'
             >
               <option value="" disabled>
                 -Select One-
@@ -107,13 +107,13 @@ function JokeForm() {
               <option value="Christmas">Christmas</option>
             </select>
           </div>
-          <label>
+          <label className="pt-2">
             Image
             <input type="file" onChange={updateFile} />
           </label>
           <div className="grid">
             <button
-              className="h-1/3 bg-green-joker rounded-lg justify-self-end self-center p-1"
+              className="h-1/3 bg-green-joker rounded-lg justify-self-end self-center px-1"
               type="submit"
             >
               Share Your Joke!

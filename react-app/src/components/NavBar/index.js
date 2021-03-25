@@ -22,19 +22,19 @@ const NavBar = () => {
           <img className="logo" alt="Laughs App logo" src="https://pairyopet.s3-us-west-1.amazonaws.com/pyp-logo-cropped.png"></img>
         </div>
         <ul className='navbar__links'>
-          <li className='navbar__link'>
+          <li className='navbar__link hover:underline text-2xl'>
             <NavLink to='/home' exact={true} activeClassName='active'>
               Home
             </NavLink>
           </li>
           {authenticated && (
             <>
-              <li className='navbar__link'>
+              <li className='navbar__link hover:underline text-2xl'>
                 <NavLink to='/messages' exact={true} activeClassName='active'>
                   Messages
                 </NavLink>
               </li>
-              <li className='navbar__link'>
+              <li className='navbar__link hover:underline text-2xl'>
                 <NavLink to='/users' exact={true} activeClassName='active'>
                   Users
                 </NavLink>
@@ -44,7 +44,7 @@ const NavBar = () => {
               </li>
             </>
           )}
-          {!authenticated && (
+          {/* {!authenticated && (
             <>
               <li className='navbar__link'>
                 <SignUpFormModal />
@@ -53,7 +53,7 @@ const NavBar = () => {
                 <LoginFormModal />
               </li>
             </>
-          )}
+          )} */}
         </ul>
       </nav>
     </header>
