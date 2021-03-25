@@ -23,19 +23,19 @@ const NavBar = () => {
         </div>
         <ul className='navbar__links'>
           <li className='navbar__link hover:underline text-2xl'>
-            <NavLink to='/home' exact={true} activeClassName='active'>
+            <NavLink to='/home' exact={true} activeClassName='text-3xl text-white'>
               Home
             </NavLink>
           </li>
           {authenticated && (
             <>
               <li className='navbar__link hover:underline text-2xl'>
-                <NavLink to='/messages' exact={true} activeClassName='active'>
+                <NavLink to='/messages' exact={true} activeClassName='text-3xl text-white'>
                   Messages
                 </NavLink>
               </li>
               <li className='navbar__link hover:underline text-2xl'>
-                <NavLink to='/users' exact={true} activeClassName='active'>
+                <NavLink to='/users' exact={true} activeClassName='text-3xl text-white'>
                   Users
                 </NavLink>
               </li>
