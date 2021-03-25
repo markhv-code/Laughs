@@ -77,7 +77,7 @@ function JokeForm() {
         <div className="w-full h-24">
           {/* <label className="self-center">Joke</label> */}
           <input
-            className="w-full h-full rounded-lg border-4 border-light-blue-500 border-opacity-50"
+            className="w-full h-full rounded-lg border-4 border-light-blue-500 border-opacity-50 pl-2"
             name="joke"
             value={jokeWords}
             onChange={(e) => setJokeWords(e.target.value)}
@@ -113,7 +113,7 @@ function JokeForm() {
           </label>
           <div className="grid">
             <button
-              className="h-1/3 bg-green-joker rounded-lg justify-self-end self-center"
+              className="h-1/3 bg-green-joker rounded-lg justify-self-end self-center p-1"
               type="submit"
             >
               Share Your Joke!
