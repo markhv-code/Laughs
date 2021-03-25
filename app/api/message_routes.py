@@ -9,7 +9,7 @@ message_routes = Blueprint("messages", __name__)
 
 
 @message_routes.route("")
-@login_required
+# @login_required
 def get_messages():
     """
     Get all messages
