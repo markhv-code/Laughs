@@ -41,7 +41,7 @@ export const createJoke = (newJoke, jokeIDtoUpdate = null) => async (
 
   if (jokeIDtoUpdate) {
     // for updating joke
-    const res = await fetch(`/api/pets/${jokeIDtoUpdate}`, {
+    const res = await fetch(`/api/jokes/${jokeIDtoUpdate}`, {
       method: "PUT",
       body: formData,
     });

@@ -1,6 +1,6 @@
 import { useState } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
-import { createMessage } from '../../../store/messages';
+import { useDispatch } from 'react-redux';
+import { createJoke } from "../../../store/jokes";
 
 export default function MessageFormForModal({ post, setShowModal }) {
   const dispatch = useDispatch();
@@ -8,8 +8,6 @@ export default function MessageFormForModal({ post, setShowModal }) {
   const [jokeType, setJokeType] = useState(post.jokeType);
   const [image, setImage] = useState(post.imageURL);
   const [errors, setErrors] = useState([]);
-
-  const lgdInUserId = useSelector((state) => state.session.user.id);
 
     const onSend = async (e) => {
         e.preventDefault();
@@ -23,7 +21,7 @@ export default function MessageFormForModal({ post, setShowModal }) {
         image,
         };
 
-        const sendJoke = await dispatch(createMessage(joke, post.id));// if you pass in a joke id, it updates instead
+        const sendJoke = await dispatch(createJoke(joke, post.id));// if you pass in a joke id, it updates instead
         if (sendJoke) {
         setJokeWords("");
         setJokeType("");
@@ -34,17 +32,6 @@ export default function MessageFormForModal({ post, setShowModal }) {
         newErrors = sendJoke.errors;
         setErrors(newErrors);
         }
-        // const jokeOrErrors = await dispatch(
-        //   !!jokeToUpdate
-        //     ? createJoke(joke, jokeToUpdate.id) // if you pass in a joke id, it updates instead
-        //     : createJoke(joke)
-        // );
-        // if (jokeOrErrors.errors) {
-        //   newErrors = jokeOrErrors.errors;
-        //   setErrors(newErrors);
-        // } else {
-        //   // no refresh, but post should show up in top of feed.
-        // }
   };
   const updateFile = (e) => {
     const file = e.target.files[0];
