@@ -7,7 +7,7 @@ export default function MessageFormModal({receiver}) {
 
   return (
     <>
-      <button className='profile-button' onClick={() => setShowModal(true)}>
+      <button  className="bg-green-joker rounded-lg p-1 m-2 hover:bg-opacity-50" onClick={() => setShowModal(true)}>
         <i className='fas fa-paw'> Message!</i>
       </button>
       {showModal && (
