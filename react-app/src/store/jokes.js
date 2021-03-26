@@ -48,7 +48,6 @@ export const createJoke = (newJoke) => async (dispatch) => {
       body: formData,
     });
     const addedJoke = await res.json();
-    console.log("-------------joke---", addedJoke);
     if (!addedJoke.errors) {
       dispatch(addJoke(addedJoke));
       return addedJoke;

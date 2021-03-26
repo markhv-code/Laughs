@@ -8,7 +8,6 @@ export default function MessageFormForModal({ receiver, setShowModal }) {
 
   const lgdInUserId = useSelector((state) => state.session.user.id);
 
-  console.log("lgdIn----------", receiver)
   const onSend = async function (e) {
     e.preventDefault();
     const msgOrErrors = await dispatch(

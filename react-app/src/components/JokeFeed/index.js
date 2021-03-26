@@ -8,8 +8,6 @@ export default function JokeFeed() {
     const allJokes = useSelector(state => Object.values(state.jokes));
     const jokeComments = useSelector(state => Object.values(state.threads));
     const allUsers = useSelector(state => Object.values(state.users));
-    // const jokeComments = comments.length ? comments : [];
-    // console.log("----------jokeComments-------", jokeComments);
 
     return (
         <div className="col-start-3 col-end-6 row-start-5 row-end-7 w-full h-full" >
@@ -17,7 +15,6 @@ export default function JokeFeed() {
                 const { id, imageURL, joke, jokeType } = post;
                 const myDate = new Date(post.timestamp);
                 const filteredComments = jokeComments.filter(joke => (joke.jokeId === id));
-                // console.log("-----------filtered-----", filteredComments);
                 return (
                     <div key={id} className="rounded-lg border-4 border-light-blue-500 border-opacity-50 p-1 m-2">
                             <h3 className="ml-1">{post.users.username}</h3>
@@ -26,7 +23,6 @@ export default function JokeFeed() {
                             <h3 className="text-lg ml-1">{joke}</h3>
                             {filteredComments && filteredComments.map(comment => {
                                 let user = allUsers.filter(usrObj => (usrObj.id === comment.userId));
-                                console.log(user, "---------user-------");
                                 return (<div key={comment.id} className="text-sm items-center bg-blue-joker my-1 ml-4 pl-1 rounded-lg w-2/5">
                                     {user[0].username}: {comment.comment}
                                 </div>)

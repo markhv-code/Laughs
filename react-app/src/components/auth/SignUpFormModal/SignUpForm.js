@@ -20,7 +20,6 @@ function SignUpFormPage() {
     setErrors([]);
     if (password === repeatPassword) {
       const user = await signUp(username, email, password);
-      console.log("---------user------", user);
       if (!user.errors) {
         dispatch(setUser(user));
         // dispatch(addUser(user));

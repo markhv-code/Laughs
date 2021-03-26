@@ -5,8 +5,6 @@ import { createThread } from "../../store/threads";
 export default function ThreadForm({ id }) {
   const currentUser = useSelector((state) => state.session.user);
   const dispatch = useDispatch();
-//   const currentJoke = useSelector((state) => state.jokes);
-//   console.log("------------id---------", id);
 
   const [comment, setComment] = useState("");
   const [errors, setErrors] = useState([]);
@@ -22,7 +20,6 @@ export default function ThreadForm({ id }) {
     };
 
     const sendThread = await dispatch(createThread(thread));
-    console.log('---------sendThread-------', sendThread);
     if (sendThread) {
       setComment("");
     } else {

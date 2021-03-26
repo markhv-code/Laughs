@@ -6,7 +6,6 @@ import { createJoke } from "../../store/jokes";
 function JokeForm() {
   //took out joketoupdate
   const currentUser = useSelector((state) => state.session.user);
-  console.log("------------------CurrentUsr", currentUser);
   const dispatch = useDispatch();
   const history = useHistory();
 
@@ -36,7 +35,6 @@ function JokeForm() {
     };
 
     const sendJoke = await dispatch(createJoke(joke));
-    console.log('---------sendJoke-------', sendJoke);
     if (sendJoke) {
       setJokeWords("");
       setJokeType("");
