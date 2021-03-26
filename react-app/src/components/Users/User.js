@@ -53,9 +53,11 @@ function User() {
         <div>
           <strong>Email</strong> {user.email}
         </div>
-        <div>
-          <MessageFormModal receiver={user} />
-        </div>
+        { lgnUsr.id !== user.id &&
+          <div>
+            <MessageFormModal receiver={user} />
+          </div>
+        }
       </div>
       <div className="col-start-3 col-end-6 row-start-5 row-end-7">
         {userJokes.reverse().map((post) => {
