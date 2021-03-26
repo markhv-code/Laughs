@@ -17,6 +17,8 @@ const NavBar = () => {
         <div>
           <img className="logo" alt="Laughs App logo" src="https://pairyopet.s3-us-west-1.amazonaws.com/pyp-logo-cropped.png"></img>
         </div>
+        <div className="col-start-5 col-end-6 text-7xl mt-1">Laughs</div>
+
         <ul className='navbar__links'>
           <li className='navbar__link'>
             <NavLink to='/home' exact={true} className='text-2xl hover:underline ' activeClassName='text-3xl text-white hover:no-underline'>

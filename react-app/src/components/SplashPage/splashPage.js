@@ -4,16 +4,16 @@ import Footer from "../Footer/Footer"
 
 export default function SplashPage() {
   return (
-    <div >
-      <nav className="bg-gradient-to-r from-blue-joker via-red-joker to-green-joker h-20 grid grid-flow-col grid-cols-10 grid-rows-1 gap-x-3">
-        <div className="col-start-5 col-end-5">
+    <div>
+      <nav className="bg-gradient-to-r from-blue-joker via-red-joker to-green-joker grid grid-flow-col grid-cols-10 grid-rows-1 gap-x-3">
+        <div className="col-start-1 col-end-1">
           <img
             style={{ height: "99%", width: "auto",}}
             alt="Laughs App logo"
             src="https://pairyopet.s3-us-west-1.amazonaws.com/pyp-logo-cropped.png"
           ></img>
         </div>
-        <div className="col-start-6 col-end-6 text-4xl mt-5 pt-1">Laughs</div>
+        <div className="col-start-5 col-end-6 text-7xl mt-1">Laughs</div>
         <div className="h-1/2 text-xl text-center outline-black mt-4 pt-1 mr-4 col-start-9 col-end-10 hover:bg-white">
           <LoginFormModal />
         </div>
