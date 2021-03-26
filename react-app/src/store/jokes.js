@@ -1,16 +1,10 @@
 const LOAD_JOKES = '/jokes/LOAD_JOKES';
-const LOAD_JOKE = '/jokes/LOAD_JOKE';
 const ADD_JOKE = '/jokes/ADD_JOKE';
 const REMOVE_JOKE = '/jokes/REMOVE_JOKE';
 
 const load = (jokes) => ({
     type: LOAD_JOKES,
     jokes,
-});
-
-const loadJoke = (joke) => ({
-    type: LOAD_JOKE,
-    joke,
 });
 
 const addJoke = (joke) => ({

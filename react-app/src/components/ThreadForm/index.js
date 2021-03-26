@@ -29,6 +29,11 @@ export default function ThreadForm({ id }) {
 
   return (
     <>
+      <div>
+          {errors.map((error) => (
+            <div key={error}>{error}</div>
+          ))}
+        </div>
       <form onSubmit={createThreadPost}>
         <input
           className="w-5/6 rounded-lg border-4"
