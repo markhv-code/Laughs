@@ -1,7 +1,7 @@
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { useHistory, useParams } from "react-router-dom";
-import { getJokes, deleteJoke } from "../../store/jokes";
+import { useParams } from "react-router-dom";
+import { deleteJoke } from "../../store/jokes";
 
 import MessageFormModal from "../Messages/MessagesFormModal/index";
 import ThreadForm from "../ThreadForm";
@@ -13,7 +13,6 @@ function User() {
   const { userId } = useParams();
 
   const dispatch = useDispatch();
-  const history = useHistory();
   const lgnUsr = useSelector((state) => state.session.user);
   const allJokes = useSelector((state) => Object.values(state.jokes));
   const jokeComments = useSelector((state) => Object.values(state.threads));
@@ -36,13 +35,12 @@ function User() {
   }
 
   const handleDelete = function (e, post) {
-    console.log(e,"-------------event----------")
     const res = window.confirm(
       `Are you sure you want to remove post ${post.id}?`
     );
     if (res) {
       dispatch(deleteJoke(post.id));
-      history.push(`/users/${post.userId}`);
+      window.location.reload(false);
     }
   };
 
