@@ -4,8 +4,8 @@ import Footer from "../Footer/Footer"
 
 export default function SplashPage() {
   return (
-    <div>
-      <nav className="bg-gradient-to-r from-blue-joker via-red-joker to-green-joker grid grid-flow-col grid-cols-10 grid-rows-1 gap-x-3">
+    <div >
+      <nav className="bg-gradient-to-r from-blue-joker via-red-joker to-green-joker h-24 grid grid-flow-col grid-cols-10 grid-rows-1 gap-x-3">
         <div className="col-start-1 col-end-1">
           <img
             style={{ height: "99%", width: "auto",}}
