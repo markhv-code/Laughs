@@ -13,7 +13,8 @@ class Joke(db.Model):
     jokeType = db.Column(db.String(50), nullable=False)
     timestamp = db.Column(db.DateTime, index=True, default=datetime.utcnow)
 
-    threads = db.relationship("Thread", backref="joke")
+    threads = db.relationship("Thread", backref="joke",
+                              cascade="all, delete, delete-orphan")
     users = db.relationship("User", backref="jokes")
 
     def to_dict(self):

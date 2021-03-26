@@ -1,26 +1,15 @@
 import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-// import { useHistory } from "react-router-dom";
 import { createJoke } from "../../store/jokes";
 
 function JokeForm() {
-  //took out joketoupdate
   const currentUser = useSelector((state) => state.session.user);
   const dispatch = useDispatch();
-  // const history = useHistory();
 
   const [jokeWords, setJokeWords] = useState("");
   const [jokeType, setJokeType] = useState("");
   const [image, setImage] = useState("");
   const [errors, setErrors] = useState([]);
-
-  //   useEffect(() => {
-  //     if (!!jokeToUpdate) {
-  //       setJokeWords(jokeToUpdate.joke);
-  //       setJokeType(jokeToUpdate.jokeType);
-  //       setImage(jokeToUpdate.image);
-  //     }
-  //   }, [jokeToUpdate]);
 
   const createJokePost = async (e) => {
     e.preventDefault();
@@ -39,25 +28,12 @@ function JokeForm() {
       setJokeWords("");
       setJokeType("");
       setImage("");
-    }
-    // if (sendJoke.errors) {
-    //   
-    else {
+    } else {
       newErrors = sendJoke.errors;
       setErrors(newErrors);
     }
-    // const jokeOrErrors = await dispatch(
-    //   !!jokeToUpdate
-    //     ? createJoke(joke, jokeToUpdate.id) // if you pass in a joke id, it updates instead
-    //     : createJoke(joke)
-    // );
-    // if (jokeOrErrors.errors) {
-    //   newErrors = jokeOrErrors.errors;
-    //   setErrors(newErrors);
-    // } else {
-    //   // no refresh, but post should show up in top of feed.
-    // }
   };
+  
   const updateFile = (e) => {
     const file = e.target.files[0];
     if (file) setImage(file);
@@ -65,15 +41,11 @@ function JokeForm() {
 
   return (
     <>
-      {/* <h1 className="text-4xl col-start-3 col-end-6 row-start-1 row-end-2 p-1 m-1 justify-self-center">
-        {!!jokeToUpdate ? "Update Joke" : "Add Joke"}
-      </h1> */}
       <form
         className="text-lg col-start-3 col-end-6 row-start-2 row-end-4 p-1 m-1"
         onSubmit={createJokePost}
       >
         <div className="w-full h-24">
-          {/* <label className="self-center">Joke</label> */}
           <input
             className="w-full h-full rounded-lg border-4 border-light-blue-500 border-opacity-50 pl-2"
             name="joke"
@@ -91,7 +63,6 @@ function JokeForm() {
               value={jokeType}
               onChange={(e) => setJokeType(e.target.value)}
               required
-              // className='self-center'
             >
               <option value="" disabled>
                 -Select One-

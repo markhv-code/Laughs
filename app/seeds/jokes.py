@@ -1,4 +1,5 @@
 from app.models import db, Joke
+# from jokeapi import Jokes  # Import the Jokes class
 
 
 def seed_jokes():
@@ -27,92 +28,92 @@ def seed_jokes():
         ),
         Joke(
             userId=2,
-            joke="A perfectionist walked into a bar...apparently, the bar wasn’t set high enough.",
+            joke="Why was 6 afraid of 7? Because 7 ate 9!",
             jokeType="Pun",
         ),
         Joke(
             userId=5,
-            joke="A perfectionist walked into a bar...apparently, the bar wasn’t set high enough.",
+            joke="I'm reading an antigravity book apparently, It's impossible to put down!",
             jokeType="Programming",
         ),
         Joke(
             userId=6,
-            joke="A perfectionist walked into a bar...apparently, the bar wasn’t set high enough.",
+            joke="What kind of cheese doesn't belong to you? Nacho cheese!",
             jokeType="Any",
         ),
         Joke(
             userId=7,
-            joke="A perfectionist walked into a bar...apparently, the bar wasn’t set high enough.",
+            joke="You can't trust atoms. They make up everything!             ",
             jokeType="Any",
         ),
         Joke(
             userId=8,
-            joke="A perfectionist walked into a bar...apparently, the bar wasn’t set high enough.",
+            joke="Why did the dog cross the road? To get to the barking lot!",
             jokeType="Any",
         ),
         Joke(
             userId=9,
-            joke="A perfectionist walked into a bar...apparently, the bar wasn’t set high enough.",
+            joke="AWhy do potatoes argue? Because they can't see eye to eye!",
             jokeType="Any",
         ),
         Joke(
             userId=1,
-            joke="A perfectionist walked into a bar...apparently, the bar wasn’t set high enough.",
+            joke="Why do mushrooms get invited to all the best parties? Because they are such fungis!",
             jokeType="Any",
         ),
         Joke(
             userId=3,
-            joke="A perfectionist walked into a bar...apparently, the bar wasn’t set high enough.",
+            joke="Can February March? No, but April May!",
             jokeType="Any",
         ),
         Joke(
             userId=6,
-            joke="A perfectionist walked into a bar...apparently, the bar wasn’t set high enough.",
+            joke="What's the loneliest cheese? ProvAlone!",
             jokeType="Any",
         ),
         Joke(
             userId=7,
-            joke="A perfectionist walked into a bar...apparently, the bar wasn’t set high enough.",
+            joke="What kind of dog does Dracula have? A bloodhound!",
             jokeType="Any",
         ),
         Joke(
             userId=8,
-            joke="A perfectionist walked into a bar...apparently, the bar wasn’t set high enough.",
+            joke="Did you get a haircut? No, I got them all cut!",
             jokeType="Any",
         ),
         Joke(
             userId=9,
-            joke="A perfectionist walked into a bar...apparently, the bar wasn’t set high enough.",
+            joke="What do you call a cold dog? A chili dog!",
             jokeType="Any",
         ),
         Joke(
             userId=4,
-            joke="A perfectionist walked into a bar...apparently, the bar wasn’t set high enough.",
+            joke="Why did the cat run away from the tree? It was afraid of the bark!",
             jokeType="Any",
         ),
         Joke(
             userId=2,
-            joke="A perfectionist walked into a bar...apparently, the bar wasn’t set high enough.",
+            joke="Why don't cannibals eat clowns? Because they taste funny!",
             jokeType="Any",
         ),
         Joke(
             userId=2,
-            joke="A perfectionist walked into a bar...apparently, the bar wasn’t set high enough.",
+            joke="How do you fix a broken tomato? Tomato paste!",
             jokeType="Any",
         ),
         Joke(
             userId=2,
-            joke="A perfectionist walked into a bar...apparently, the bar wasn’t set high enough.",
+            joke="Why don't eggs tell each other jokes? They'd crack each other up!",
             jokeType="Any",
         ),
         Joke(
             userId=2,
-            joke="A perfectionist walked into a bar...apparently, the bar wasn’t set high enough.",
+            joke="Why did the hipster burn his tongue on coffee? Because he drank it before it was cool!",
             jokeType="Any",
         ),
         Joke(
             userId=2,
-            joke="A perfectionist walked into a bar...apparently, the bar wasn’t set high enough.",
+            joke="Why did the farmer win an award? He was out standing in his field!",
             jokeType="Any",
         ),
     ]
