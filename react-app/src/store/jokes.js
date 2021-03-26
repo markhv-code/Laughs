@@ -36,7 +36,7 @@ export const createJoke = (newJoke) => async (dispatch) => {
 
     if (image) formData.append('image', image);
     
-      // for creating pet
+      // for creating joke
     const res = await fetch(`/api/jokes`, {
       method: 'POST',
       body: formData,
