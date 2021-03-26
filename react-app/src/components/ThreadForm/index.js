@@ -43,7 +43,7 @@ export default function ThreadForm({ id }) {
           placeholder="Leave a comment!"
           required
         />
-        <button type="submit" className="m-2 w-1/12 rounded-lg bg-green-joker">Post</button>
+        <button type="submit" className="m-2 w-1/12 rounded-lg bg-green-joker hover:bg-opacity-50">Post</button>
       </form>
     </>
   );

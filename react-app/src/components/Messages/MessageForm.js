@@ -36,7 +36,7 @@ export default function MessageForm() {
         rows={3}
         required
       />
-      <button type='submit' className='bg-green-joker rounded-xl m-1 p-1'>
+      <button type='submit' className='bg-green-joker rounded-xl m-1 p-1 hover:bg-opacity-50'>
         <i className='m-1 p-1'>Send</i>
       </button>
     </form>

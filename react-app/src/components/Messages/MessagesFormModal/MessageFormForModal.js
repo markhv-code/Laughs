@@ -24,7 +24,7 @@ export default function MessageFormForModal({ receiver, setShowModal }) {
   };
 
   return (
-    <form onSubmit={onSend} className='msg-form-modal'>
+    <form onSubmit={onSend}>
       <h2 className="m-1 p-1">Message {receiver.username}</h2>
       <div className='w-60'>
         <textarea
@@ -37,7 +37,7 @@ export default function MessageFormForModal({ receiver, setShowModal }) {
           rows={3}
           required
         />
-        <button type='submit' className='bg-green-joker rounded-xl m-1 p-1 text-black'>
+        <button type='submit' className='bg-green-joker rounded-xl m-1 p-1 text-black hover:bg-opacity-75'>
           <i className='m-1 p-1'>Send</i>
         </button>
       </div>

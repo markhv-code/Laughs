@@ -111,7 +111,7 @@ function JokeForm() {
           </label>
           <div className="grid">
             <button
-              className="h-1/3 bg-green-joker rounded-lg justify-self-end self-center px-1"
+              className="h-1/3 bg-green-joker rounded-lg justify-self-end self-center px-1 hover:bg-opacity-50"
               type="submit"
             >
               Share Your Joke!

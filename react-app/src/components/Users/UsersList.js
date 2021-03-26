@@ -17,15 +17,15 @@ function UsersList() {
   const userComponents = users.map((user) => {
     return (
       <li key={user.id}>
-        <NavLink to={`/users/${user.id}`}>{user.username}</NavLink>
+        <NavLink className="text-xl hover:text-blue-joker" to={`/users/${user.id}`}>{user.username}</NavLink>
       </li>
     );
   });
 
   return (
     <>
-      <h1>User List: </h1>
-      <ul>{userComponents}</ul>
+      <h1 className="text-4xl p-2">User List: </h1>
+      <ul className="pl-3">{userComponents}</ul>
       <div className="absolute bottom-0 w-full">
         <Footer />
       </div>
