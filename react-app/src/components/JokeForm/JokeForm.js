@@ -65,15 +65,11 @@ function JokeForm() {
 
   return (
     <>
-      {/* <h1 className="text-4xl col-start-3 col-end-6 row-start-1 row-end-2 p-1 m-1 justify-self-center">
-        {!!jokeToUpdate ? "Update Joke" : "Add Joke"}
-      </h1> */}
       <form
         className="text-lg col-start-3 col-end-6 row-start-2 row-end-4 p-1 m-1"
         onSubmit={createJokePost}
       >
         <div className="w-full h-24">
-          {/* <label className="self-center">Joke</label> */}
           <input
             className="w-full h-full rounded-lg border-4 border-light-blue-500 border-opacity-50 pl-2"
             name="joke"
@@ -91,7 +87,6 @@ function JokeForm() {
               value={jokeType}
               onChange={(e) => setJokeType(e.target.value)}
               required
-              // className='self-center'
             >
               <option value="" disabled>
                 -Select One-
