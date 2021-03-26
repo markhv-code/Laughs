@@ -75,7 +75,7 @@ function User() {
               <div className="flex justify-between py-1"> 
                 <strong className="ml-1">{post.users.username}</strong>
                 {lgnUsr.id === userId &&
-                  <JokeFormModal/>
+                  <JokeFormModal post={post}/>
                 }
               </div>
               <div className="flex justify-between py-1">

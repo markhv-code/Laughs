@@ -2,11 +2,11 @@ import { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { createMessage } from '../../../store/messages';
 
-export default function MessageFormForModal({ receiver, setShowModal }) {
+export default function MessageFormForModal({ post, setShowModal }) {
   const dispatch = useDispatch();
-  const [jokeWords, setJokeWords] = useState("");
-  const [jokeType, setJokeType] = useState("");
-  const [image, setImage] = useState("");
+  const [jokeWords, setJokeWords] = useState(post.joke);
+  const [jokeType, setJokeType] = useState(post.jokeType);
+  const [image, setImage] = useState(post.imageURL);
   const [errors, setErrors] = useState([]);
 
   const lgdInUserId = useSelector((state) => state.session.user.id);
@@ -17,13 +17,13 @@ export default function MessageFormForModal({ receiver, setShowModal }) {
         let newErrors = [];
 
         const joke = {
-        userId: lgdInUserId,
+        userId: post.userId,
         joke: jokeWords,
         jokeType,
         image,
         };
 
-        const sendJoke = await dispatch(createJoke(joke));
+        const sendJoke = await dispatch(createMessage(joke, post.id));// if you pass in a joke id, it updates instead
         if (sendJoke) {
         setJokeWords("");
         setJokeType("");
@@ -90,7 +90,7 @@ export default function MessageFormForModal({ receiver, setShowModal }) {
             <input type="file" onChange={updateFile} />
           </label>
         <button type='submit' className='bg-green-joker rounded-xl m-1 p-1 text-black hover:bg-opacity-75'>
-          <i className='m-1 p-1'>Send</i>
+          <i className='m-1 p-1'>Update</i>
         </button>
       </div>
       <div>

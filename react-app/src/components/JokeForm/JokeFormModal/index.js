@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { Modal } from '../../../context/ModalAndAuth';
 import JokeFormForModal from './JokeFormForModal';
 
-export default function JokeFormModal({receiver}) {
+export default function JokeFormModal({post}) {
   const [showModal, setShowModal] = useState(false);
 
   return (
@@ -13,7 +13,7 @@ export default function JokeFormModal({receiver}) {
       {showModal && (
         <Modal onClose={() => setShowModal(false)}>
           <JokeFormForModal
-            receiver={receiver}
+            post={post}
             setShowModal={setShowModal}
           />
         </Modal>
