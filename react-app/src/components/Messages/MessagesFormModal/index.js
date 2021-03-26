@@ -2,6 +2,12 @@ import { useState } from 'react';
 import { Modal } from '../../../context/ModalAndAuth';
 import MessageFormForModal from './MessageFormForModal';
 
+var socket = io();
+socket.on('connect', function() {
+  socket.emit('my event', {data: 'I\'m connected!'});
+});
+
+
 export default function MessageFormModal({receiver}) {
   const [showModal, setShowModal] = useState(false);
 

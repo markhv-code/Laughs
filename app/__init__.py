@@ -1,5 +1,6 @@
 import os
 from flask import Flask, render_template, request, session, redirect
+from flask_socketio import SocketIO, emit
 from flask_cors import CORS
 from flask_migrate import Migrate
 from flask_wtf.csrf import CSRFProtect, generate_csrf
@@ -17,6 +18,7 @@ from .seeds import seed_commands
 from .config import Config
 
 app = Flask(__name__)
+socketio = SocketIO(app)
 
 # Setup login manager
 login = LoginManager(app)
@@ -79,3 +81,27 @@ def react_root(path):
     if path == 'favicon.ico':
         return app.send_static_file('favicon.ico')
     return app.send_static_file('index.html')
+
+
+@socketio.on('my event')
+def test_message(message):
+    emit('my response', {'data': message['data']})
+
+
+@socketio.on('my broadcast event')
+def test_message(message):
+    emit('my response', {'data': message['data']}, broadcast=True)
+
+
+@socketio.on('connect')
+def test_connect():
+    emit('my response', {'data': 'Connected'})
+
+
+@socketio.on('disconnect')
+def test_disconnect():
+    print('Client disconnected')
+
+
+if __name__ == '__main__':
+    socketio.run(app)
