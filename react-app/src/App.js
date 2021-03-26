@@ -22,7 +22,7 @@ import { getUsers } from './store/users';
 import { authenticate } from './services/auth';
 
 function App() {
-  const { authenticated, setAuthenticated } = useModalAndAuthContext();
+  const { setAuthenticated } = useModalAndAuthContext();
   const dispatch = useDispatch();
   const [loaded, setLoaded] = useState(false);
   const sessionUser = useSelector((state) => state.session.user);

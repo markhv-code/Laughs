@@ -2,10 +2,6 @@
 import { NavLink } from 'react-router-dom';
 import LogoutButton from '../auth/LogoutButton';
 
-// import components
-import SignUpFormModal from '../auth/SignUpFormModal';
-import LoginFormModal from '../auth/LoginFormModal';
-
 // import context
 import { useModalAndAuthContext } from '../../context/ModalAndAuth';
 
@@ -44,16 +40,6 @@ const NavBar = () => {
               </li>
             </>
           )}
-          {/* {!authenticated && (
-            <>
-              <li className='navbar__link'>
-                <SignUpFormModal />
-              </li>
-              <li className='navbar__link'>
-                <LoginFormModal />
-              </li>
-            </>
-          )} */}
         </ul>
       </nav>
     </header>

@@ -1,13 +1,13 @@
 import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { useHistory } from "react-router-dom";
+// import { useHistory } from "react-router-dom";
 import { createJoke } from "../../store/jokes";
 
 function JokeForm() {
   //took out joketoupdate
   const currentUser = useSelector((state) => state.session.user);
   const dispatch = useDispatch();
-  const history = useHistory();
+  // const history = useHistory();
 
   const [jokeWords, setJokeWords] = useState("");
   const [jokeType, setJokeType] = useState("");
@@ -41,10 +41,10 @@ function JokeForm() {
       setImage("");
     }
     // if (sendJoke.errors) {
-    //   newErrors = sendJoke.errors;
-    //   setErrors(newErrors)};
+    //   
     else {
-      history.push(`/`);
+      newErrors = sendJoke.errors;
+      setErrors(newErrors);
     }
     // const jokeOrErrors = await dispatch(
     //   !!jokeToUpdate
