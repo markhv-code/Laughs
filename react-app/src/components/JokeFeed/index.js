@@ -1,5 +1,6 @@
 import { useDispatch, useSelector } from 'react-redux';
 import { getJokes } from '../../store/jokes';
+
 import ThreadForm from '../ThreadForm';
 
 export default function JokeFeed() {
@@ -8,6 +9,8 @@ export default function JokeFeed() {
     const allJokes = useSelector(state => Object.values(state.jokes));
     const jokeComments = useSelector(state => Object.values(state.threads));
     const allUsers = useSelector(state => Object.values(state.users));
+
+
 
     return (
         <div className="col-start-3 col-end-6 row-start-5 row-end-7 w-full h-full" >
