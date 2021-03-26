@@ -4,7 +4,10 @@ import { createMessage } from '../../../store/messages';
 
 export default function MessageFormForModal({ receiver, setShowModal }) {
   const dispatch = useDispatch();
-  const [msg, setMsg] = useState('');
+  const [jokeWords, setJokeWords] = useState("");
+  const [jokeType, setJokeType] = useState("");
+  const [image, setImage] = useState("");
+  const [errors, setErrors] = useState([]);
 
   const lgdInUserId = useSelector((state) => state.session.user.id);
 
