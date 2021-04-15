@@ -15,7 +15,7 @@ export default function JokeFeed() {
     return (
         <div className="col-start-3 col-end-6 row-start-5 row-end-7 w-full h-full" >
             {allJokes.reverse().map((post) => {
-                const { id, imageURL, joke, jokeType } = post;
+                const { id, joke, jokeType } = post;
                 const myDate = new Date(post.timestamp);
                 const filteredComments = jokeComments.filter(joke => (joke.jokeId === id));
                 return (
