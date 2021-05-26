@@ -22,7 +22,7 @@ export default function SplashPage() {
         </div>
       </nav>
       <div className="h-screen grid grid-flow-col grid-cols-6 grid-rows-6 bg-guy-pattern bg-cover">
-        <h1 className=" text-gray-500 text-4xl col-start-2 col-end-2 row-start-1 row-end-2 p-1 m-1">
+        <h1 className=" text-gray-500 text-4xl col-start-2 col-end-2 row-start-2 row-end-3 p-1 m-1">
           Sharing jokes around the world
         </h1>
         <h2 className="text-4xl text-gray-500 col-start-6 col-end-6 row-start-2 row-end-3 p-1 m-1 ">

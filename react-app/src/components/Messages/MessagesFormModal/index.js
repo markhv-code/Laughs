@@ -8,7 +8,7 @@ export default function MessageFormModal({receiver}) {
   return (
     <>
       <button  className="bg-green-joker rounded-lg p-1 m-2 hover:bg-opacity-50" onClick={() => setShowModal(true)}>
-        <i className='fas fa-paw'> Message!</i>
+        <i> Message!</i>
       </button>
       {showModal && (
         <Modal onClose={() => setShowModal(false)}>

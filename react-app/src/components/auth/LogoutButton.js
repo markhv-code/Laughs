@@ -15,7 +15,7 @@ const LogoutButton = () => {
     setAuthenticated(false);
   };
 
-  return <button className="hover:underline text-2xl"onClick={onLogout}>Logout</button>;
+  return <button className="hover:underline text-2xl pr-3"onClick={onLogout}>Logout</button>;
 };
 
 export default LogoutButton;
